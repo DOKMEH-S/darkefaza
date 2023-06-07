@@ -542,11 +542,16 @@ html#night #menu-container nav .menu-item span {
     height: 20vh;
     width: 6vw;
 }
+#menu-container .colorPallet-title-container{
+    padding: 0;
+    margin: 0 0 80px 5vw;
+}
 #menu-container .colorPallet-container{
     display: flex;
     align-items: center;
     column-gap: 22px;
-    padding: 0 0 80px 5vw;
+    width: calc(35px*4 + 22px*3);
+    position: relative;
 }
 #menu-container .colorPallet-container .colorPallet-item{
     width: 35px;
@@ -570,12 +575,39 @@ html#night #menu-container nav .menu-item span {
 #menu-container .colorPallet-container .colorPallet-item:nth-child(2) span{background-color: var(--pallet-red-color)}
 #menu-container .colorPallet-container .colorPallet-item:nth-child(3) span{background-color: var(--pallet-green-color)}
 #menu-container .colorPallet-container .colorPallet-item:nth-child(4) span{background-color: var(--pallet-orange-color)}
+#menu-container .colorPallet-container .colorPallet-item {
+    position: absolute;
+    transition: all ease-in-out 0.4s;
+}
+#menu-container .colorPallet-container .colorPallet-item.selected {
+    position: relative;
+    z-index: 2;
+}
 
+#menu-container .colorPallet-container .colorPallet-item:nth-child(4){
+    transform: translateX(calc(35px*3 + 22px*3));
+}
 
+#menu-container .colorPallet-container .colorPallet-item:nth-child(3){
+    transform: translateX(calc(35px*2 + 22px*2));
+}
 
-
-
-
+#menu-container .colorPallet-container .colorPallet-item:nth-child(2) {
+    transform: translateX(calc(35px*1 + 22px*1));
+}
+#menu-container .colorPallet-container.selected .colorPallet-item:nth-child(1),
+#menu-container .colorPallet-container.selected .colorPallet-item:nth-child(2) ,
+#menu-container .colorPallet-container.selected .colorPallet-item:nth-child(3),
+#menu-container .colorPallet-container.selected .colorPallet-item:nth-child(4) {
+    transform: none;
+}
+#menu-container .colorPallet-container.selected {
+    width: calc(35px);
+}
+#menu-container .colorPallet-title-container .text {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
 header.bg-effect::before {
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(7px);
@@ -2753,5 +2785,24 @@ html[data-color="green"]#night .memberCard{
 }
 html[data-color="orange"]#night .memberCard{
     --highlight: var(--pallet-orange-color-main);
+}
+html[data-color="orange"] section.singleProjectGalleryTitleWrap .title-arrows-wrapper .swiper-button-next,html[data-color="orange"] section.singleProjectGalleryTitleWrap .title-arrows-wrapper .swiper-button-prev {
+    background-image: url(./assets/img/right-arrow-orange.svg);
+}
+html[data-color="red"] section.singleProjectGalleryTitleWrap .title-arrows-wrapper .swiper-button-next,html[data-color="red"] section.singleProjectGalleryTitleWrap .title-arrows-wrapper .swiper-button-prev {
+    background-image: url(./assets/img/right-arrow-red.svg);
+}
+html[data-color="green"] section.singleProjectGalleryTitleWrap .title-arrows-wrapper .swiper-button-next,html[data-color="green"] section.singleProjectGalleryTitleWrap .title-arrows-wrapper .swiper-button-prev {
+    background-image: url(./assets/img/right-arrow-green.svg);
+}
+
+html#night[data-color="orange"] section.singleProjectGalleryTitleWrap .title-arrows-wrapper .swiper-button-next,html#night[data-color="orange"] section.singleProjectGalleryTitleWrap .title-arrows-wrapper .swiper-button-prev {
+    background-image: url(./assets/img/right-arrow-orange-dark.svg);
+}
+html#night[data-color="red"] section.singleProjectGalleryTitleWrap .title-arrows-wrapper .swiper-button-next,html#night[data-color="red"] section.singleProjectGalleryTitleWrap .title-arrows-wrapper .swiper-button-prev {
+    background-image: url(./assets/img/right-arrow-red-dark.svg);
+}
+html#night[data-color="green"] section.singleProjectGalleryTitleWrap .title-arrows-wrapper .swiper-button-next,html#night[data-color="green"] section.singleProjectGalleryTitleWrap .title-arrows-wrapper .swiper-button-prev {
+    background-image: url(./assets/img/right-arrow-green-dark.svg);
 }
 /*---------------------------------------------------colors*/
