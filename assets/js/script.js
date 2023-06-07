@@ -3,7 +3,7 @@
 /*====================IS MOBILE=====================*/
 var pageTag = $('body').attr('data-pageType');
 var direction = document.querySelector('html').getAttribute('dir');
-$('a').addClass('hover-target');
+$('a').addClass('hover-target menuItem');
 $('#menu').addClass('hover-target');
 /*====================DETECT TIME=====================*/
 const hours = new Date().getHours()

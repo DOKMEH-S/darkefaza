@@ -400,6 +400,9 @@ header {
     padding: 0 5vw;
     box-sizing: border-box;
 }
+body.opMenu header .identity-text-title-wrap #textTitle {
+    opacity: 0;
+}
 header .identity {
     position: relative;
     display: -webkit-box;
@@ -414,7 +417,9 @@ body.opMenu header .identity{
 header #menuMobile {
     display: none;
 }
-
+body.opMenu header::before {
+    opacity: 0;
+}
 #menu-container {
     position: fixed;
     z-index: 99;
@@ -1148,7 +1153,7 @@ main.projectsWrapper {
 #filter img {
     height: 1.6rem;
 }
-#textTitle {margin-left: 2rem;}
+#textTitle {margin-left: 2rem;position: relative;z-index: 1;}
 html.fixed #filter {height: 8vh;}
 #filter {
     position: fixed;
