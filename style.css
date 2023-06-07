@@ -400,6 +400,12 @@ header {
     padding: 0 5vw;
     box-sizing: border-box;
 }
+body.opMenu header::before {
+    opacity: 0;
+}
+body.opMenu header .identity-text-title-wrap #textTitle {
+    opacity: 0;
+}
 header .identity {
     position: relative;
     display: -webkit-box;
