@@ -19,7 +19,14 @@ $('#menu-container .colorPallet-container .colorPallet-item').each(function (){
         $('html').attr('data-color',pickedColor)
         $(this).siblings().removeClass('selected');
         $(this).addClass('selected');
+        $(this).parents('.colorPallet-container').addClass('selected')
     })
+})
+$('#menu-container .colorPallet-container').mouseenter(function (){
+    $(this).removeClass('selected');
+})
+$('#menu-container .colorPallet-container').mouseleave(function (){
+    $(this).addClass('selected');
 })
 /*====================DETECT COLOR=====================*/
 /*====================OP-MENU=====================*/
@@ -176,7 +183,6 @@ function ajaxSucses(){
                     ease: 'power4.out',
                 });
                 setTimeout(function () {
-                    $('html').addClass('loaded');
                     setTimeout(function () {
                         initTitle()
                     },500)
@@ -231,6 +237,11 @@ function ajaxSucses(){
             },100)
             break;
         case "blog":
+            setTimeout(function () {
+                setTimeout(function () {
+                    $('.wrapper').addClass('loaded');
+                },500)
+            },100)
             break;
         case "projects":
              setTimeout(function () {

@@ -515,7 +515,6 @@ header .identity-text-title-wrap {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: var(--pallet-blue-color);
     opacity: 0.5;
 }
 #menu-container nav .menu-item span {
@@ -544,7 +543,7 @@ html#night #menu-container nav .menu-item span {
 }
 #menu-container .colorPallet-title-container{
     padding: 0;
-    margin: 0 0 80px 5vw;
+    margin: 0 0 10rem 5vw;
 }
 #menu-container .colorPallet-container{
     display: flex;
@@ -560,6 +559,19 @@ html#night #menu-container nav .menu-item span {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+.menu-contact-info-wrap {
+    position: absolute;
+    left: 5vw;
+    bottom: 3rem;
+}
+
+.menu-contact-info-wrap a:last-child {
+    color: var(--black-color);
+}
+
+html#night .menu-contact-info-wrap a:last-child {
+    color: var(--white-color);
 }
 #menu-container .colorPallet-container .colorPallet-item:nth-child(1){background-color: #D6DDFF}
 #menu-container .colorPallet-container .colorPallet-item:nth-child(2){background-color: #F0D5D5}
@@ -2662,19 +2674,40 @@ html[data-color="orange"]#night #menu-container nav .menu-item span{
     color: var(--pallet-orange-color-main);
 }
 html[data-color="red"] main.homeWrapper section.home-about-container .video-wrap:before ,
-html[data-color="red"] main.blogWrapper section.blogContainer::before ,
-html[data-color="red"] #menu-container nav .menu-item .img:before{
+html[data-color="red"] main.blogWrapper section.blogContainer::before{
     background-color: var(--pallet-red-color);
 }
 html[data-color="green"] main.homeWrapper section.home-about-container .video-wrap:before ,
-html[data-color="green"] main.blogWrapper section.blogContainer::before ,
-html[data-color="green"] #menu-container nav .menu-item .img:before{
+html[data-color="green"] main.blogWrapper section.blogContainer::before{
     background-color: var(--pallet-green-color);
 }
 html[data-color="orange"] main.homeWrapper section.home-about-container .video-wrap:before ,
-html[data-color="orange"] main.blogWrapper section.blogContainer::before ,
-html[data-color="orange"] #menu-container nav .menu-item .img:before{
+html[data-color="orange"] main.blogWrapper section.blogContainer::before {
     background-color: var(--pallet-orange-color);
+}
+html[data-color="blue"] #menu-container nav .menu-item .img:before {
+    animation: miChangeColorToBlue 0.5s forwards linear
+}
+@keyframes miChangeColorToBlue {
+    to {background-color: var(--pallet-blue-color);}
+}
+html[data-color="red"] #menu-container nav .menu-item .img:before {
+    animation: miChangeColorToRed 0.5s forwards linear
+}
+@keyframes miChangeColorToRed {
+    to {background-color: var(--pallet-red-color);}
+}
+html[data-color="green"] #menu-container nav .menu-item .img:before {
+    animation: miChangeColorToGreen 0.5s forwards linear
+}
+@keyframes miChangeColorToGreen {
+    to {background-color: var(--pallet-green-color);}
+}
+html[data-color="orange"] #menu-container nav .menu-item .img:before {
+    animation: miChangeColorToOrange 0.5s forwards linear
+}
+@keyframes miChangeColorToOrange {
+    to {background-color: var(--pallet-orange-color);}
 }
 html[data-color="red"] .contactContainer .contact-tabs .tabs .nav.nav-tabs .nav-item .nav-link.active ,
 html[data-color="red"] .contactContainer .contact-tabs .tabs input,
