@@ -35,22 +35,16 @@ var is_iPod = navigator.platform == "iPod";
 var is_iPad = navigator.platform == "iPad";
 /*====================DETECT DEVICE=====================*/
 /*====================DEFINE GSAP=====================*/
-if(!is_Mac){
-    gsap.registerPlugin(ScrollTrigger, ScrollSmoother,SplitText);
-    if(!isMobile.any){
-        const smoother = ScrollSmoother.create({
-            wrapper: '#smooth-wrapper',
-            content:'#smooth-content',
-            smooth: 1,               // how long (in seconds) it takes to "catch up" to the native scroll position
-            effects: true,           // looks for data-speed and data-lag attributes on elements
-            smoothTouch: false,        // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
-        });
-        smoother.effects('.parallax-img',{speed: 'auto'});
-    }
-}
-if(is_Mac){
-    gsap.registerPlugin(ScrollTrigger,SplitText);
-    $('.parallax-img').addClass('no-parallax');
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother,SplitText);
+if(!isMobile.any){
+    const smoother = ScrollSmoother.create({
+        wrapper: '#smooth-wrapper',
+        content:'#smooth-content',
+        smooth: 1,               // how long (in seconds) it takes to "catch up" to the native scroll position
+        effects: true,           // looks for data-speed and data-lag attributes on elements
+        smoothTouch: true,        // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
+    });
+    smoother.effects('.parallax-img',{speed: 'auto'});
 }
 /*====================DEFINE GSAP=====================*/
 $(document).ready(function () {
@@ -141,21 +135,11 @@ function initSlogan(){
             ease: 'power4.out',
         },
     });
-    tl4.to( '.sloganTitle .char', {
+    tl4.to( '.mBox', {
         y: 0,
         opacity:1,
         duration: 0.5,
         stagger: 0.1,
-        ease: 'power4.out',
-    }).to('.sloganText p',{
-        y:0,
-        opacity:1,
-        duration: 1,
-        ease: 'power4.out',
-    }).to('.loadBox',{
-        y:0,
-        opacity:1,
-        duration: 1,
         ease: 'power4.out',
     });
 }
@@ -221,12 +205,6 @@ function ajaxSucses(){
         }
             break;
         case "aboutUs":
-            setTimeout(function () {
-                setTimeout(function () {
-                    $('.wrapper').addClass('loaded');
-                },500)
-            },100)
-
             var widthCEOImg = $('.aboutCEOWrapper .CEOWrap .ceo-media').width();
             $('.aboutCEOWrapper .CEOWrap .ceo-media').css('height',widthCEOImg);
             Splitting();
@@ -321,16 +299,16 @@ function ajaxSucses(){
                 return this.chars[Math.floor(Math.random() * this.chars.length)];
             }}
 
-            function loadTextScramble(){
-                let phrases = ['I am a very smart assist here for you'];
+        function loadTextScramble(){
+            let phrases = ['I am a very smart assist here for you'];
 
 
-                let el = document.getElementById('textTitle');
-                let fx = new TextScramble(el);
+            let el = document.getElementById('textTitle');
+            let fx = new TextScramble(el);
 
-                let counter = 0;
-                fx.setText(phrases[counter])
-            }
+            let counter = 0;
+            fx.setText(phrases[counter])
+        }
             // ——————————————————————————————————————————————————
             // Example
             // ——————————————————————————————————————————————————
