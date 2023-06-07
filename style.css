@@ -400,9 +400,6 @@ header {
     padding: 0 5vw;
     box-sizing: border-box;
 }
-body.opMenu header .identity-text-title-wrap #textTitle {
-    opacity: 0;
-}
 header .identity {
     position: relative;
     display: -webkit-box;
@@ -411,15 +408,10 @@ header .identity {
     transition: transform 0.3s;
     align-items: center;
 }
-body.opMenu header .identity{
-    opacity: 0;
-}
 header #menuMobile {
     display: none;
 }
-body.opMenu header::before {
-    opacity: 0;
-}
+
 #menu-container {
     position: fixed;
     z-index: 99;
@@ -444,13 +436,16 @@ html#night #menu-container{
 #menu-container nav {
     position: relative;
     height: 100%;
-    width: 50%;
-    height: 100%;
-    margin: auto 0 auto auto;
+    width: 38vw;
+    margin: auto 11vw auto auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /*overflow: hidden;*/
+}
+#menu-container nav > * {
+    width: 100%;
 }
 #menu-container nav .top {
     display: flex;
@@ -462,12 +457,24 @@ header .identity-text-title-wrap {
 }
 #menu-container nav .middle {
     display: flex;
-    height: 44vh;
+    height: 37vh;
 }
 #menu-container nav .middle .containTwo {
     display: flex;
     flex-direction: column;
     height: 80%;
+}
+#menu-container nav .top ,
+#menu-container nav .bottom{
+    display: flex;
+    justify-content: center;
+}
+#menu-container nav .middle .containTwo .img {
+    width: 7vw;
+}
+
+#menu-container nav .middle > .menu-item .img {
+    width: 13vw;
 }
 #menu-container nav .menu-item {
     display: flex;
@@ -482,15 +489,18 @@ header .identity-text-title-wrap {
     flex-direction: row-reverse;
 }
 #menu-container nav .menu-item .img {
-    /*height: 100%;*/
+    /*width: 100%;*/
+    height: 100%;
     position: relative;
 }
-#menu-container nav .menu-item img{
+#menu-container nav .menu-item img {
     height: 100%;
-
+    width: 100%;
+    object-fit: cover;
 }
 #menu-container nav .bottom .menu-item .img{
-    height: 13vh;
+    height: 11vh;
+    width: 9vw;
 }
 #menu-container nav .menu-item .img:before{
     position: absolute;
@@ -524,13 +534,13 @@ html#night #menu-container nav .menu-item span {
 
 #menu-container nav .top .menu-item:nth-child(2) .img{
     height: 20vh;
-    width: 7vw;
+    width: 6vw;
 }
 #menu-container .colorPallet-container{
     display: flex;
     align-items: center;
     column-gap: 22px;
-    padding: 0 0 80px 80px;
+    padding: 0 0 80px 5vw;
 }
 #menu-container .colorPallet-container .colorPallet-item{
     width: 35px;
@@ -781,6 +791,12 @@ main.homeWrapper section.home-slogan-container .slogan-info .mBox {
     transition: opacity .6s cubic-bezier(.215,.61,.355,1),transform .6s cubic-bezier(.215,.61,.355,1);
     transition: opacity .6s cubic-bezier(.215,.61,.355,1),transform .6s cubic-bezier(.215,.61,.355,1),-webkit-transform .6s cubic-bezier(.215,.61,.355,1);
     text-align: right !important;
+}
+.mBox{
+    opacity: 0;
+    -webkit-transform: translateY(60px);
+    -ms-transform: translateY(60px);
+    transform: translateY(60px);
 }
 /*============HOME==============*/
 /*============ABOUT==============*/
@@ -1092,13 +1108,11 @@ section.aboutMemberContainer .membersWrapper .memberCard {
     -ms-transform: scale(1.1);
     transform: scale(1.1);
 }
-.memberCard:nth-of-type(odd) {
-    --highlight: var(
-            --blue-color);
+.memberCard{
+    --highlight: var(--pallet-blue-color);
 }
-.memberCard:nth-of-type(even) {
-    --highlight: var(
-            --yellow-color);
+html#night .memberCard{
+    --highlight: var(--pallet-blue-color-main);
 }
 .memberCard .text {
     position: absolute;
@@ -1151,7 +1165,7 @@ main.projectsWrapper {
 #filter img {
     height: 1.6rem;
 }
-#textTitle {margin-left: 2rem;position: relative;z-index: 1;}
+#textTitle {margin-left: 2rem;}
 html.fixed #filter {height: 8vh;}
 #filter {
     position: fixed;
@@ -1192,6 +1206,7 @@ section.projectsWrapper {
     -o-transition: opacity .6s cubic-bezier(.215,.61,.355,1),transform .6s cubic-bezier(.215,.61,.355,1);
     transition: opacity .6s cubic-bezier(.215,.61,.355,1),transform .6s cubic-bezier(.215,.61,.355,1);
     transition: opacity .6s cubic-bezier(.215,.61,.355,1),transform .6s cubic-bezier(.215,.61,.355,1),-webkit-transform .6s cubic-bezier(.215,.61,.355,1);
+    pointer-events: none;
 }
 section.projectsWrapper .projectWrap .projectMedia img {
     width: 100%;
@@ -1713,30 +1728,16 @@ main.blogWrapper ,
 main.contactUsWrapper{
     width: 100%;
     display: block;
-    padding-top: 12vh;
+    padding-top: 14vh;
     padding-bottom: 5rem;
-    opacity: 0;
     position: relative;
-    -webkit-transform: translateY(60px);
-    -ms-transform: translateY(60px);
-    transform: translateY(60px);
-    -webkit-transition: opacity .6s cubic-bezier(.215,.61,.355,1),-webkit-transform .6s cubic-bezier(.215,.61,.355,1);
-    transition: opacity .6s cubic-bezier(.215,.61,.355,1),-webkit-transform .6s cubic-bezier(.215,.61,.355,1);
-    -o-transition: opacity .6s cubic-bezier(.215,.61,.355,1),transform .6s cubic-bezier(.215,.61,.355,1);
-    transition: opacity .6s cubic-bezier(.215,.61,.355,1),transform .6s cubic-bezier(.215,.61,.355,1);
-    transition: opacity .6s cubic-bezier(.215,.61,.355,1),transform .6s cubic-bezier(.215,.61,.355,1),-webkit-transform .6s cubic-bezier(.215,.61,.355,1);
 }
 main.blogWrapper.loaded ,
 main.contactUsWrapper.loaded{
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
 }
 main.blogWrapper section.blogContainer {
     width: 100%;
     display: block;
-    padding: 5rem 0;
     opacity: 0;
     position: relative;
     -webkit-transform: translateY(60px);
@@ -1790,8 +1791,11 @@ main.blogWrapper section.blogContainer .blog-wrap .blog-media-info-wrap .blog-me
     overflow: hidden;
     height: 46vh;
     margin-bottom: 2rem;
+    transition: opacity ease-in-out .4s;
 }
-
+main.blogWrapper section.blogContainer .blog-wrap:hover .blog-media-info-wrap .blog-media {
+    opacity: .6;
+}
 main.blogWrapper section.blogContainer .blog-wrap .blog-media-info-wrap .blog-media img {
     width: 100%;
     height: 130%;
@@ -1824,11 +1828,11 @@ main.blogWrapper section.blogContainer .blog-wrap .blog-media-info-wrap .blog-in
 }
 
 main.blogWrapper section.blogContainer .blog-wrap:hover .blog-media-info-wrap .blog-info {
-    opacity: .6;
+    /* opacity: .6; */
 }
 
 main.blogWrapper section.blogContainer .blog-wrap:hover .news-date span {
-    opacity: .6;
+    /* opacity: .6; */
 }
 main.blogWrapper section.blogContainer .blog-wrap:nth-of-type(even) .news-date {
     -webkit-box-pack: end;
@@ -1941,7 +1945,7 @@ section.singleBlogSideBarWrapper aside.singleBlogOtherB .otherBlogWrap .blog-med
 
 section.singleBlogSideBarWrapper aside.singleBlogOtherB .otherBlogWrap .blog-media img {
     width: 100%;
-    height: 120%;
+    height: 130%;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -1984,6 +1988,7 @@ section.singleBlogSideBarWrapper .single-blog-content img {
     display: flex;
     align-items: flex-end;
     column-gap: 60px;
+    min-height: 56vh;
 }
 .contactContainer .contact_info {
     flex: 1.5;
@@ -2053,7 +2058,9 @@ html#night .contactContainer .contact-tabs .tabs .nav.nav-tabs .nav-item .nav-li
     font-weight: 700;
     margin-bottom: 15px;
 }
-
+.tab-content>.tab-pane {
+    min-height: 38vh;
+}
 .contactContainer .contact-tabs .tabs input ,.contactContainer .contact-tabs .tabs textarea {
     border: none;
     border-bottom: 1px solid var(--pallet-blue-color);
@@ -2109,7 +2116,7 @@ footer {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    border-top: 1px solid var(--blue-color);
+    border-top: 1px solid var(--pallet-blue-color);
     padding: 3rem 0;
     -webkit-box-align: end;
     -ms-flex-align: end;
@@ -2117,9 +2124,10 @@ footer {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    color: var(--blue-color);
 }
-
+html#night footer{
+    border-top: 1px solid var(--pallet-blue-color-main);
+}
 footer .footerContactInfo {
     position: relative;
 }
@@ -2173,7 +2181,10 @@ footer .copyright-wrap a svg {
 }
 
 footer .copyright-wrap a svg path, footer .copyright-wrap a svg polygon {
-    fill: var(--blue-color);
+    fill: var(--pallet-blue-color);
+}
+html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap a svg polygon {
+    fill: var(--pallet-blue-color-main);
 }
 /*============FOOTER==============*/
 @media only screen and (max-width: 768px){
@@ -2680,5 +2691,61 @@ html[data-color="orange"]  .contactContainer .contact-tabs .tabs button[type="su
 html[data-color="orange"]#night  .contactContainer .contact-tabs .tabs button[type="submit"]{
     color: var(--pallet-orange-color-main);
     border-bottom: 1px solid var(--pallet-orange-color-main);
+}
+html[data-color="red"] footer{
+    border-top: 1px solid var(--pallet-red-color);
+}
+html[data-color="green"]  footer{
+    border-top: 1px solid var(--pallet-green-color);
+}
+html[data-color="orange"] footer {
+    border-top: 1px solid var(--pallet-orange-color);
+}
+html[data-color="red"]#night footer{
+    border-top: 1px solid var(--pallet-red-color-main);
+}
+html[data-color="green"]#night  footer{
+    border-top: 1px solid var(--pallet-green-color-main);
+}
+html[data-color="orange"]#night footer {
+    border-top: 1px solid var(--pallet-orange-color-main);
+}
+html[data-color="red"] footer .copyright-wrap a svg path,html[data-color="red"] footer .copyright-wrap a svg polygon {
+    fill: var(--pallet-red-color);
+}
+html[data-color="green"] footer .copyright-wrap a svg path,html[data-color="green"] footer .copyright-wrap a svg polygon {
+    fill: var(--pallet-green-color);
+}
+html[data-color="orange"] footer .copyright-wrap a svg path,html[data-color="orange"] footer .copyright-wrap a svg polygon {
+    fill: var(--pallet-orange-color);
+}
+html[data-color="red"]#night footer .copyright-wrap a svg path,html[data-color="red"]#night footer .copyright-wrap a svg polygon {
+    fill: var(--pallet-red-color-main);
+}
+html[data-color="green"]#night footer .copyright-wrap a svg path,html[data-color="green"]#night footer .copyright-wrap a svg polygon {
+    fill: var(--pallet-green-color-main);
+}
+html[data-color="orange"]#night footer .copyright-wrap a svg path,html[data-color="orange"]#night footer .copyright-wrap a svg polygon {
+    fill: var(--pallet-orange-color-main);
+}
+
+
+html[data-color="red"] .memberCard{
+    --highlight: var(--pallet-red-color);
+}
+html[data-color="green"] .memberCard{
+    --highlight: var(--pallet-green-color);
+}
+html[data-color="orange"] .memberCard{
+    --highlight: var(--pallet-orange-color);
+}
+html[data-color="red"]#night .memberCard{
+    --highlight: var(--pallet-red-color-main);
+}
+html[data-color="green"]#night .memberCard{
+    --highlight: var(--pallet-green-color-main);
+}
+html[data-color="orange"]#night .memberCard{
+    --highlight: var(--pallet-orange-color-main);
 }
 /*---------------------------------------------------colors*/

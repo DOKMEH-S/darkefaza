@@ -17,6 +17,8 @@ $('#menu-container .colorPallet-container .colorPallet-item').each(function (){
     $(this).click(function (){
         var pickedColor=$(this).attr('data-color')
         $('html').attr('data-color',pickedColor)
+        $(this).siblings().removeClass('selected');
+        $(this).addClass('selected');
     })
 })
 /*====================DETECT COLOR=====================*/
@@ -188,6 +190,7 @@ function ajaxSucses(){
             }
             let splitTitle = new SplitText($('section.home-slogan-container .slogan-info h1'),{type: "words, chars, lines", charsClass: "char",wordsClass:"word",linesClass:'line mBox', position: "relative" });
             let splitDate = new SplitText($('main.homeWrapper section.home-slogan-container .slogan-info p'),{type: "words, chars, lines", charsClass: "char",wordsClass:"word mBox",linesClass:'line', position: "relative" });
+            let splitContent = new SplitText($('main.homeWrapper section.home-about-container .content'),{type: "words, chars, lines", charsClass: "char",wordsClass:"word",linesClass:'line mBox', position: "relative" });
         function initTitle(){
             let tl2 = gsap.timeline({
                 delay: .02,
@@ -235,13 +238,9 @@ function ajaxSucses(){
             },100)
             break;
         case "projects":
-            setTimeout(function () {
-                setTimeout(function () {
-                    $('.projectsWrapper').addClass('loaded');
-                    $('#filter').addClass('loaded');
-                    loadTextScramble()
-                },500)
-            },100)
+             setTimeout(function () {
+                 $('section.projectsWrapper').css('pointer-events','auto')
+             },2500)
             // ——————————————————————————————————————————————————
             // TextScramble
             // ——————————————————————————————————————————————————
