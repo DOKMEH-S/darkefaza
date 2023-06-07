@@ -131,12 +131,33 @@ html[data-color="orange"]::-webkit-scrollbar-thumb {
     outline-color: transparent !important;
 }
 ::-moz-selection {
-    background-color: var(--blue-color);
+    background-color: var(--pallet-blue-color);
     color: var(--white-color);
 }
 ::selection {
-    background-color: var(--blue-color);
+    background-color: var(--pallet-blue-color);
     color: var(--white-color);
+}
+html[data-color="red"] *::selection {
+    background-color: var(--pallet-red-color);
+}
+html[data-color="green"] *::selection {
+    background-color: var(--pallet-green-color);
+}
+html[data-color="orange"] *::selection {
+    background-color: var(--pallet-orange-color);
+}
+html[data-color="blue"]#night *::selection {
+    background-color: var(--pallet-blue-color-main);
+}
+html[data-color="red"]#night *::selection {
+    background-color: var(--pallet-red-color-main);
+}
+html[data-color="green"]#night *::selection {
+    background-color: var(--pallet-green-color-main);
+}
+html[data-color="orange"]#night *::selection {
+    background-color: var(--pallet-orange-color-main);
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -282,7 +303,7 @@ html#night .router-overlay{
     border:none
 }
 .cursor2{
-    border: 2px solid var(--blue-color);
+    border: 2px solid var(--pallet-blue-color);
     -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 }
@@ -442,7 +463,7 @@ html#night #menu-container{
 #menu-container nav {
     position: relative;
     height: 100%;
-    width: 38vw;
+    width: 22vw;
     margin: auto 11vw auto auto;
     display: flex;
     flex-direction: column;
@@ -490,16 +511,18 @@ header .identity-text-title-wrap {
     position: relative;
     box-sizing: border-box;
 }
-#menu-container nav .top .menu-item:nth-child(1),
-#menu-container nav .middle .containTwo .menu-item {
-    flex-direction: row-reverse;
+#menu-container nav .top .menu-item:nth-child(1) span,
+#menu-container nav .middle .containTwo .menu-item span{
+    left: auto;
+    right: 100%;
 }
 #menu-container nav .menu-item .img {
     /*width: 100%;*/
     height: 100%;
     position: relative;
 }
-#menu-container nav .menu-item img {
+#menu-container nav .menu-item img ,
+#menu-container nav .menu-item video{
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -516,9 +539,13 @@ header .identity-text-title-wrap {
     top: 0;
     left: 0;
     opacity: 0.5;
+    transition: all ease-in-out 0.5s;
 }
 #menu-container nav .menu-item span {
     color: var(--pallet-blue-color);
+    position: absolute;
+    left: 100%;
+    white-space: pre;
 }
 html#night #menu-container nav .menu-item span {
     color: var(--pallet-blue-color-main);
@@ -526,7 +553,7 @@ html#night #menu-container nav .menu-item span {
 #menu-container nav .menu-item span:before {
     position: absolute;
     content: attr(data-number);
-    bottom: 25px;
+    bottom: 20px;
     font-size: 0.6rem;
 }
 #menu-container nav .middle .containTwo > .menu-item {
@@ -559,6 +586,8 @@ html#night #menu-container nav .menu-item span {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    position: absolute;
+    transition: all ease-in-out 0.4s;
 }
 .menu-contact-info-wrap {
     position: absolute;
@@ -577,6 +606,10 @@ html#night .menu-contact-info-wrap a:last-child {
 #menu-container .colorPallet-container .colorPallet-item:nth-child(2){background-color: #F0D5D5}
 #menu-container .colorPallet-container .colorPallet-item:nth-child(3){background-color: #CCDFD7}
 #menu-container .colorPallet-container .colorPallet-item:nth-child(4){background-color: #FEE1CD}
+html#night #menu-container .colorPallet-container .colorPallet-item:nth-child(1){background-color: var(--pallet-blue-color-lighter)}
+html#night #menu-container .colorPallet-container .colorPallet-item:nth-child(2){background-color: var(--pallet-red-color-lighter)}
+html#night #menu-container .colorPallet-container .colorPallet-item:nth-child(3){background-color: var(--pallet-green-color-lighter)}
+html#night #menu-container .colorPallet-container .colorPallet-item:nth-child(4){background-color: var(--pallet-orange-color-lighter)}
 #menu-container .colorPallet-container .colorPallet-item span{
     width: 15px;
     height: 15px;
@@ -587,10 +620,10 @@ html#night .menu-contact-info-wrap a:last-child {
 #menu-container .colorPallet-container .colorPallet-item:nth-child(2) span{background-color: var(--pallet-red-color)}
 #menu-container .colorPallet-container .colorPallet-item:nth-child(3) span{background-color: var(--pallet-green-color)}
 #menu-container .colorPallet-container .colorPallet-item:nth-child(4) span{background-color: var(--pallet-orange-color)}
-#menu-container .colorPallet-container .colorPallet-item {
-    position: absolute;
-    transition: all ease-in-out 0.4s;
-}
+html#night #menu-container .colorPallet-container .colorPallet-item:nth-child(1) span{background-color: var(--pallet-blue-color-main)}
+html#night #menu-container .colorPallet-container .colorPallet-item:nth-child(2) span{background-color: var(--pallet-red-color-main)}
+html#night #menu-container .colorPallet-container .colorPallet-item:nth-child(3) span{background-color: var(--pallet-green-color-main)}
+html#night #menu-container .colorPallet-container .colorPallet-item:nth-child(4) span{background-color: var(--pallet-orange-color-main)}
 #menu-container .colorPallet-container .colorPallet-item.selected {
     position: relative;
     z-index: 2;
@@ -2594,6 +2627,25 @@ html[data-color="green"] .cursor2 {
 }
 html[data-color="orange"] .cursor2 {
     border: 2px solid var(--pallet-orange-color);
+}
+html[data-color="red"] .cursor2.hover ,
+html[data-color="green"] .cursor2.hover ,
+html[data-color="orange"] .cursor2.hover{
+    border-color: transparent;
+}
+html[data-color="red"]#night .cursor2 {
+    border: 2px solid var(--pallet-red-color-main);
+}
+html[data-color="green"]#night .cursor2 {
+    border: 2px solid var(--pallet-green-color-main);
+}
+html[data-color="orange"]#night .cursor2 {
+    border: 2px solid var(--pallet-orange-color-main);
+}
+html[data-color="red"]#night .cursor2.hover ,
+html[data-color="green"]#night .cursor2.hover ,
+html[data-color="orange"]#night .cursor2.hover{
+    border-color: transparent;
 }
 html[data-color="red"] header #menu .menuBoxes svg rect {
     stroke: var(--pallet-red-color);

@@ -101,6 +101,11 @@ $(document).ready(function () {
 
     });
 })
+function backButtonEvent() {
+    ScrollTrigger.refresh();
+    $('.router-overlay').removeClass('inSight');
+    $('body').removeClass('opMenu');
+}
 /*=========Effect on text*/
 if(! isMobile.any){
     function animateFrom(elem, direction) {
@@ -183,6 +188,7 @@ function ajaxSucses(){
                     ease: 'power4.out',
                 });
                 setTimeout(function () {
+                    $('html').addClass('loaded');
                     setTimeout(function () {
                         initTitle()
                     },500)
