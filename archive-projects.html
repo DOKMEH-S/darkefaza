@@ -8,7 +8,7 @@
     <link href="./style.css?v=1.0.3" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <title>Darke Faza</title>
     <style>
-        main.wrapper{
+        main.wrapper,#menu-container,header{
             opacity: 0;
         }
     </style>
@@ -489,7 +489,9 @@
 <script src="./assets/js/script.js?v=1.0.1"></script>
 <script>
     function ready(){
-        document.querySelector('main.wrapper').style.opacity = '1'
+        document.querySelector('main.wrapper').style.opacity = '1';
+        document.getElementById('menu-container').style.opacity = '1';
+        document.querySelector('header').style.opacity = '1';
     }
     document.addEventListener("DOMContentLoaded", ready);
 </script>

@@ -7,6 +7,11 @@
     <link href="./assets/css/fonts.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link href="./style.css?v=1.0.3" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <title>Darke faza</title>
+    <style>
+        main.wrapper,#menu-container,header{
+            opacity: 0;
+        }
+    </style>
 </head>
 <div class="router-overlay-first"></div>
 <body data-pageType="home">
@@ -123,5 +128,13 @@
 <script src='./assets/js/ScrollSmoother.min.js'></script>
 <script src='./assets/js/SplitText.min.js'></script>
 <script src="./assets/js/script.js?v=1.0.2"></script>
+<script>
+    function ready(){
+        document.querySelector('main.wrapper').style.opacity = '1';
+        document.getElementById('menu-container').style.opacity = '1';
+        document.querySelector('header').style.opacity = '1';
+    }
+    document.addEventListener("DOMContentLoaded", ready);
+</script>
 </body>
 </html>

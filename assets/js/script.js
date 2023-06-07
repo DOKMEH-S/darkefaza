@@ -231,11 +231,6 @@ function ajaxSucses(){
             },100)
             break;
         case "blog":
-            setTimeout(function () {
-                setTimeout(function () {
-                    $('.wrapper').addClass('loaded');
-                },500)
-            },100)
             break;
         case "projects":
              setTimeout(function () {

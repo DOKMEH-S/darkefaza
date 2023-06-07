@@ -1986,9 +1986,8 @@ section.singleBlogSideBarWrapper .single-blog-content img {
 /*=============ContactUs===============*/
 .contactContainer {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     column-gap: 60px;
-    min-height: 56vh;
 }
 .contactContainer .contact_info {
     flex: 1.5;
@@ -2008,6 +2007,7 @@ section.singleBlogSideBarWrapper .single-blog-content img {
 }
 .contactContainer .contact-tabs {
     flex: 1;
+    padding-top: 13vh;
 }
 .contactFeature-container {
     margin-top: 60px;

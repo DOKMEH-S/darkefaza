@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link href="./style.css?v=1.0.3" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <title>Darke Faza</title>
+    <style>
+        main.wrapper,#menu-container,header{
+            opacity: 0;
+        }
+    </style>
 </head>
 <body data-pageType="aboutUs">
 <div class="router-overlay-first"></div>
@@ -89,8 +94,8 @@
 </div>
 <div id="smooth-wrapper">
     <div id="smooth-content">
-        <main class="wrapper contactUsWrapper mBox">
-            <div class="contactContainer padding-class">
+        <main class="wrapper contactUsWrapper">
+            <div class="contactContainer padding-class mBox">
                 <div class="contact_info">
                     <h1 class="title">
                         <span>HAVE AN IDEA?</span>
@@ -154,13 +159,21 @@
 <div class='cursor' id="cursor"></div>
 <div class='cursor2' id="cursor2"></div>
 <div class='cursor3' id="cursor3"></div>
-<script defer src="./assets/js/jQuery.min.js"></script>
-<script defer src="./assets/js/bootstrap.min.js"></script>
+<script src="./assets/js/jQuery.min.js"></script>
+<script src="./assets/js/bootstrap.min.js"></script>
 <script src='./assets/js/gsap.min.js'></script>
 <script src='./assets/js/ScrollTrigger.min.js'></script>
 <script src='./assets/js/ScrollSmoother.min.js'></script>
 <script src='./assets/js/SplitText.min.js'></script>
 <script src='./assets/js/splitting.min.js'></script>
-<script defer src="./assets/js/script.js?v=1.0.1"></script>
+<script src="./assets/js/script.js?v=1.0.1"></script>
+<script>
+    function ready(){
+        document.querySelector('main.wrapper').style.opacity = '1';
+        document.getElementById('menu-container').style.opacity = '1';
+        document.querySelector('header').style.opacity = '1';
+    }
+    document.addEventListener("DOMContentLoaded", ready);
+</script>
 </body>
 </html>
