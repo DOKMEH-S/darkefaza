@@ -353,13 +353,16 @@ function ajaxSucses(){
                             projectNameWidth = projectName.width(),
                             currentWidth = element.width(),
                             windowsWidth = $('section.projectsContainer').width(),
-                            currentHeight = element.height(),
                             elementTop = element.offset().top,
                             elementLeft = element.offset().left,
                             finalCorX = currentWidth + elementLeft,
                             finalCorY = elementTop,
                             paddingX = parseInt($('main.projectsWrapper').css('paddingRight')),
                             distanceToRight = windowsWidth - paddingX;
+                            setTimeout(function () {
+                                projectNameWidth = projectName.width();
+                                return projectNameWidth;
+                            },100)
                         if(distanceToRight > finalCorX){
                             projectName.css({
                                 'left':finalCorX,
@@ -367,7 +370,7 @@ function ajaxSucses(){
                             })
                         } else if (distanceToRight < finalCorX) {
                             projectName.css({
-                                'left':finalCorX - currentWidth - projectNameWidth - 20,
+                                'left':finalCorX - currentWidth - projectNameWidth - 40,
                                 'top':finalCorY
                             })
                         }
