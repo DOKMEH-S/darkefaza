@@ -779,6 +779,9 @@ header #menu .text::after {
     transition: transform 0.3s cubic-bezier(0.5, 0.5, 0.3, 1);
     transition: transform 0.3s cubic-bezier(0.5, 0.5, 0.3, 1), -webkit-transform 0.3s cubic-bezier(0.5, 0.5, 0.3, 1);
 }
+html#night header #menu .menuBoxes svg rect:last-child {
+    fill: var(--night-bg) !important;
+}
 body.opMenu header #menu .text span {
     -webkit-transform: translate3d(-150%, 0, 0);
     transform: translate3d(-150%, 0, 0);
@@ -847,7 +850,7 @@ main.homeWrapper section.home-slogan-container {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-end;
-    padding: 0 5vw 5rem 0;
+    padding: 0 5vw 3rem 0;
 }
 
 main.homeWrapper section.home-slogan-container .slogan-overlay {
@@ -923,7 +926,7 @@ main.homeWrapper section.home-slogan-container .slogan-overlay::before {
     pointer-events: none;
     opacity: 0;
 }
-main.homeWrapper section.home-slogan-container .slogan-info p {font-family: 'IBM Plex Mono', monospace;}
+main.homeWrapper section.home-slogan-container .slogan-info p {font-family: 'IBM Plex Mono', monospace;margin: 0;}
 main.homeWrapper section.home-slogan-container .slogan-info .mBox {
     opacity: 0;
     position: relative;
@@ -943,6 +946,29 @@ main.homeWrapper section.home-slogan-container .slogan-info .mBox {
     -ms-transform: translateY(60px);
     transform: translateY(60px);
 }
+footer.home-footer-contact-info {
+    position: absolute;
+    width: auto;
+    padding: 0;
+    left: 5vw;
+    bottom: 3rem;
+    border: unset;
+    z-index: 2;
+}
+
+footer.home-footer-contact-info a:last-child {
+    color: var(--black-color);
+    margin-left: 1rem;
+}
+
+html#night footer.home-footer-contact-info a:last-child {
+    color: var(--white-color);
+}
+
+html#night footer.home-footer-contact-info {
+    border: unset;
+}
+
 /*============HOME==============*/
 /*============ABOUT==============*/
 section.aboutContainer {
@@ -2369,9 +2395,8 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         align-items: center;
         column-gap: 13px;
     }
-    header .identity svg {
-        width: auto;
-        height: 100%;
+    header .identity svg,header #menu .menuBoxes svg {
+        height: 7vh;
     }
     header #menuMobile > span {
         font-family: 'IBM Plex Mono', monospace;
@@ -2581,9 +2606,8 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         height: 9vh;
         left: 3vw;
     }
-    header .identity svg {
-        width: 8rem;
-        height: auto;
+    header .identity svg,header #menu .menuBoxes svg {
+        height: 6vh;
     }
     #menu-container {
         right: 3vw;
@@ -2613,8 +2637,6 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     /*=========LOADING============*/
     /*=========NAV & HEADER============*/
     header .identity svg {
-        width: 6rem;
-        height: auto;
     }
 
     #menu-container nav ul li a {
@@ -2652,8 +2674,6 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     /*=========LOADING============*/
     /*=========NAV & HEADER============*/
     header .identity svg {
-        width: 7rem;
-        height: auto;
     }
 
     #menu-container nav ul li a {
