@@ -65,7 +65,7 @@ $(document).ready(function () {
     } else {
         setTimeout(function () {
             $('html').addClass('loaded');
-            TweenMax.to(".router-overlay-first", 1.2, {y: '-100%', ease: "power4.out"});
+            TweenMax.to(".router-overlay-first", 1.2, {scaleX: '0', ease: "power4.out"});
             setTimeout(function () {
                 initSlogan();
             },1300)
