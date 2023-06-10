@@ -68,7 +68,7 @@ $(document).ready(function () {
             $('html').addClass('loaded');
             TweenMax.to(".router-overlay-first", 1.2, {scaleX: '0', ease: "power1.out"});
             setTimeout(function () {
-                if(!isMbile.any){
+                if(!isMobile.any){
                     initSlogan();
                 }
             },1300)

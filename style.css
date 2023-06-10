@@ -224,9 +224,9 @@ input[type="number"]{
     -webkit-transform-origin: left;
     -ms-transform-origin: left;
     transform-origin: left;
-    -webkit-transition: all ease-in-out 1200ms;
-    -o-transition: all ease-in-out 1200ms;
-    transition: all ease-in-out 1200ms;
+    -webkit-transition: transform  ease-in-out 1200ms;
+    -o-transition: transform  ease-in-out 1200ms;
+    transition: transform ease-in-out 1200ms;
 }
 html#night .router-overlay{
     background-color: var(--pallet-blue-color-main);
@@ -701,33 +701,33 @@ header #menu .menuBoxes svg {
 header #menu .menuBoxes svg rect {
     stroke: var(--pallet-blue-color);
     transition: all ease-in .4s;
-    transition-delay: .2s;
+    transition-delay: 0s;
 }
 body.opMenu header #menu .menuBoxes svg rect {
     position: absolute;
     x: 28;
     y: 36;
     z-index: 0;
-    transition-delay: 0.5s;
+    transition-delay: 0.2s;
 }
 header #menu .menuBoxes svg rect:last-child {
     fill: var(--white-color) !important;
 }
 
 header #menu .menuBoxes svg rect:nth-of-type(2) {
-    transition-delay: 0.4s;
+    transition-delay: 0.2s;
 }
 
 header #menu .menuBoxes svg rect:nth-of-type(3) {
-    transition-delay: .6s;
+    transition-delay: .4s;
 }
 
 header #menu .menuBoxes svg rect:nth-of-type(4) {
-    transition-delay: .8s;
+    transition-delay: .6s;
 }
 
 header #menu .menuBoxes svg rect:nth-of-type(5) {
-    transition-delay: 1s;
+    transition-delay: .8s;
 }
 body.opMenu header #menu .menuBoxes svg rect:last-child {
     x: 3;
