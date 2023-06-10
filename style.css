@@ -694,9 +694,46 @@ header .identity svg {
 }
 header #menu .menuBoxes svg {
     height: 9vh;
+    position: relative;
 }
 header #menu .menuBoxes svg rect {
     stroke: var(--pallet-blue-color);
+    transition: all ease-in .4s;
+    transition-delay: .2s;
+}
+body.opMenu header #menu .menuBoxes svg rect {
+    position: absolute;
+    x: 28;
+    y: 36;
+    z-index: 0;
+    transition-delay: 0.5s;
+}
+header #menu .menuBoxes svg rect:last-child {
+    fill: var(--white-color) !important;
+}
+
+header #menu .menuBoxes svg rect:nth-of-type(2) {
+    transition-delay: 0.4s;
+}
+
+header #menu .menuBoxes svg rect:nth-of-type(3) {
+    transition-delay: .6s;
+}
+
+header #menu .menuBoxes svg rect:nth-of-type(4) {
+    transition-delay: .8s;
+}
+
+header #menu .menuBoxes svg rect:nth-of-type(5) {
+    transition-delay: 1s;
+}
+body.opMenu header #menu .menuBoxes svg rect:last-child {
+    x: 3;
+    y: 28;
+    width: 3rem;
+    height: 3rem;
+    fill: var(--white-color) !important;
+    z-index: 2;
 }
 html#night header #menu .menuBoxes svg rect {
     stroke: var(--pallet-blue-color-main);
@@ -756,6 +793,31 @@ body.opMenu header #menu .text::before {
 body.opMenu header #menu .text::after {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+}
+header.projectHeader {
+    position: fixed;
+    top: auto;
+    left: auto;
+    padding: 0;
+}
+
+header.projectHeader::before {
+    width: 100%;
+}
+
+header.projectHeader .identity-text-title-wrap {
+    position: fixed;
+    height: 14vh;
+    left: 5vw;
+    top: 0;
+    transition: all linear 0.5s;
+}
+
+header.projectHeader #menu {
+    position: fixed;
+    right: 5vw;
+    top: 0;
+    height: 14vh;
 }
 /*============NAV & HEADER==============*/
 /*============HOME==============*/

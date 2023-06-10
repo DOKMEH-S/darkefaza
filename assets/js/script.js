@@ -250,9 +250,10 @@ function ajaxSucses(){
             },100)
             break;
         case "projects":
-             setTimeout(function () {
-                 $('section.projectsWrapper').css('pointer-events','auto')
-             },2500)
+            $('header').addClass('projectHeader');
+            setTimeout(function () {
+                $('section.projectsWrapper').css('pointer-events','auto')
+            },2500)
             // ——————————————————————————————————————————————————
             // TextScramble
             // ——————————————————————————————————————————————————
