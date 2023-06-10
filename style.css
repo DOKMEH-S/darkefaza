@@ -330,7 +330,7 @@ html#night .router-overlay{
     top: 0;
     left: 0;
     z-index: 9999;
-    background-color: var(--white-color);
+    background-color: var(--pallet-blue-color);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -354,7 +354,7 @@ html.loaded #loading {
     transform: translateY(-100%);
 }
 #loading .loading-text p {
-    color: var(--blue-color);
+    color: var(--white-color);
     font-weight: 400;
     font-size: 8rem;
     margin: 0;
@@ -363,7 +363,7 @@ html.loaded #loading {
 }
 #loading .loading-text {
     margin: 0;
-    color: var(--blue-color);
+    color: var(--white-color);
     text-transform: uppercase;
     position: relative;
     overflow: hidden;
@@ -382,7 +382,7 @@ html.loaded #loading {
     position: absolute;
     width: 0;
     height: 100%;
-    background-color: var(--blue-color);
+    background-color: var(--white-color);
     left: 0;
     top: -15px;
     -webkit-animation: growLine 2s cubic-bezier(.77,0,.175,1) forwards 0.2s;
@@ -540,7 +540,8 @@ header .identity-text-title-wrap {
     top: 0;
     left: 0;
     opacity: 0.5;
-    transition: all ease-in-out 0.5s;
+    transition: all ease-in-out 0.3s;
+    background-color: transparent;
 }
 #menu-container nav .menu-item span {
     color: var(--pallet-blue-color);
@@ -735,12 +736,14 @@ body.opMenu header #menu .menuBoxes svg rect:last-child {
     height: 3rem;
     fill: var(--white-color) !important;
     z-index: 2;
+    transition-delay: 0s;
 }
 html#night header #menu .menuBoxes svg rect {
     stroke: var(--pallet-blue-color-main);
 }
 header .identity svg g path {
     fill: var(--pallet-blue-color);
+    transition: all ease-in-out .4s;
 }
 html#night header .identity svg g path {
     fill: var(--pallet-blue-color-main);
@@ -751,6 +754,8 @@ header #menu .text {
     overflow: hidden;
     display: inline-block;
     width: 48px;
+    color: inherit;
+    transition: all ease-in .4s;
 }
 header #menu .text span {
     display: inline-block;
@@ -782,6 +787,7 @@ header #menu .text::after {
 }
 html#night header #menu .menuBoxes svg rect:last-child {
     fill: var(--night-bg) !important;
+    transition-delay: 0s;
 }
 body.opMenu header #menu .text span {
     -webkit-transform: translate3d(-150%, 0, 0);
@@ -954,7 +960,7 @@ footer.home-footer-contact-info {
     padding: 0;
     left: 5vw;
     bottom: 3rem;
-    border: unset;
+    border: unset !important;
     z-index: 2;
 }
 
@@ -2388,6 +2394,7 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         justify-content: space-between;
         padding: 0 20px;
         height: 10vh;
+        background-color: var(--white-color);
     }
     header #menuMobile {
         display: flex;
@@ -2396,6 +2403,7 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     }
     header .identity svg,header #menu .menuBoxes svg {
         height: 7vh;
+        width: auto;
     }
     header #menuMobile > span {
         font-family: 'IBM Plex Mono', monospace;
@@ -2454,13 +2462,37 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         width: 100%;
     }
     main.homeWrapper section.home-slogan-container {
-        padding: 20px;
+        padding: 0;
+        height: auto;
+    }
+    main.homeWrapper section.home-about-container {
+        position: relative;
+        left: auto;
+        width: 100%;
+        top: 0;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    main.homeWrapper section.home-about-container .content {
+        margin-bottom: 2rem;
+    }
+
+    footer.home-footer-contact-info {
+        position: relative;
+        left: auto;
+        bottom: auto;
+    }
+
+    main.homeWrapper section.home-about-container .video-wrap {
+        height: 14vh;
     }
     main.homeWrapper section.home-slogan-container .slogan-info h1 {
         font-size: 1.5rem;
     }
     main.homeWrapper{
-        height: calc(var(--vh, 1vh) * 100);
+        height: auto;
+        padding: 10vh 20px 3rem;
     }
     main.homeWrapper section.home-slogan-container .slogan-info p {
         font-size: 0.9rem;
@@ -2569,6 +2601,10 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         justify-content: flex-end;
     }
     /*==========BLOG=============*/
+    .mBox {
+        opacity: 1 !important;
+        transform: unset !important;
+    }
 }
 @media only screen and (min-width: 640px) and (max-width: 768px) {
     /*==========NAV & HEADER==============*/
@@ -2730,12 +2766,15 @@ html[data-color="orange"]#night .cursor2.hover{
 }
 html[data-color="red"] header #menu .menuBoxes svg rect {
     stroke: var(--pallet-red-color);
+    transition-delay: 0s;
 }
 html[data-color="green"] header #menu .menuBoxes svg rect {
     stroke:var(--pallet-green-color);
+    transition-delay: 0s;
 }
 html[data-color="orange"] header #menu .menuBoxes svg rect {
     stroke: var(--pallet-orange-color);
+    transition-delay: 0s;
 }
 html[data-color="red"]#night header #menu .menuBoxes svg rect {
     stroke: var(--pallet-red-color-main);
@@ -2819,25 +2858,29 @@ html[data-color="orange"] main.blogWrapper section.blogContainer::before {
     background-color: var(--pallet-orange-color);
 }
 html[data-color="blue"] #menu-container nav .menu-item .img:before {
-    animation: miChangeColorToBlue 0.5s forwards linear
+    /* animation: miChangeColorToBlue 0.5s forwards linear; */
+    background-color: var(--pallet-blue-color);
 }
 @keyframes miChangeColorToBlue {
     to {background-color: var(--pallet-blue-color);}
 }
 html[data-color="red"] #menu-container nav .menu-item .img:before {
-    animation: miChangeColorToRed 0.5s forwards linear
+    /* animation: miChangeColorToRed 0.5s forwards linear; */
+    background-color: var(--pallet-red-color);
 }
 @keyframes miChangeColorToRed {
     to {background-color: var(--pallet-red-color);}
 }
 html[data-color="green"] #menu-container nav .menu-item .img:before {
-    animation: miChangeColorToGreen 0.5s forwards linear
+    /* animation: miChangeColorToGreen 0.5s forwards linear; */
+    background-color: var(--pallet-green-color);
 }
 @keyframes miChangeColorToGreen {
     to {background-color: var(--pallet-green-color);}
 }
 html[data-color="orange"] #menu-container nav .menu-item .img:before {
-    animation: miChangeColorToOrange 0.5s forwards linear
+    /* animation: miChangeColorToOrange 0.5s forwards linear; */
+    background-color: var(--pallet-orange-color);
 }
 @keyframes miChangeColorToOrange {
     to {background-color: var(--pallet-orange-color);}
@@ -2972,5 +3015,26 @@ html#night[data-color="red"] section.singleProjectGalleryTitleWrap .title-arrows
 }
 html#night[data-color="green"] section.singleProjectGalleryTitleWrap .title-arrows-wrapper .swiper-button-next,html#night[data-color="green"] section.singleProjectGalleryTitleWrap .title-arrows-wrapper .swiper-button-prev {
     background-image: url(./assets/img/right-arrow-green-dark.svg);
+}
+body.opMenu header #menu .menuBoxes svg rect:last-child body.opMenu header #menu .menuBoxes svg rect:last-child {
+    transition-delay: .2s;
+}
+
+html#night body.opMenu header #menu .menuBoxes svg rect:last-child {
+    transition-delay: 0s;
+}
+html#night #loading {
+    background-color: var(--night-bg);
+}
+
+html#night #loading .loading-text,html#night #loading .loading-text p {
+    color: var(--pallet-blue-color-main);
+}
+
+html#night #loading .loadLine::before {
+    background-color: var(--pallet-blue-color-main);
+}
+html#night {
+    background-color: var(--night-bg);
 }
 /*---------------------------------------------------colors*/

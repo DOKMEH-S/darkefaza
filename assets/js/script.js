@@ -9,6 +9,7 @@ $('#menu').addClass('hover-target');
 const hours = new Date().getHours()
 const isDayTime = hours > 6 && hours < 20;
 if (isDayTime === false) {
+    document.querySelector('html').style.backgroundColor = '#1E1E1E';
     $('html').attr('id', 'night');
 }
 /*====================DETECT TIME=====================*/
@@ -67,7 +68,9 @@ $(document).ready(function () {
             $('html').addClass('loaded');
             TweenMax.to(".router-overlay-first", 1.2, {scaleX: '0', ease: "power1.out"});
             setTimeout(function () {
-                initSlogan();
+                if(!isMbile.any){
+                    initSlogan();
+                }
             },1300)
         },100)
     }
@@ -190,13 +193,17 @@ function ajaxSucses(){
                 setTimeout(function () {
                     $('html').addClass('loaded');
                     setTimeout(function () {
-                        initTitle()
+                        if(!isMobile.any){
+                            initTitle()
+                        }
                     },500)
                 },2200)
             } else {
                 setTimeout(function () {
                     setTimeout(function () {
-                        initTitle();
+                        if(isMobile.any){
+                            initTitle();
+                        }
                     },500)
                 },100)
             }

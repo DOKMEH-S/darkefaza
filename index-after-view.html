@@ -8,8 +8,8 @@
     <link href="./style.css?v=1.0.3" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <title>Darke faza</title>
     <style>
-        main.wrapper,#menu-container,header{
-            opacity: 0;
+        main.wrapper,#menu-container,header,.router-overlay{
+            display: none;
         }
     </style>
 </head>
@@ -49,7 +49,7 @@
         </div>
     </div>
 </header>
-<div id="menu-container">
+<div id="menu-container" style="opacity: 0;">
     <div class="colorPallet-title-container">
         <div class="text">choose <br>color <br> palette</div>
         <div class="colorPallet-container selected">
@@ -141,9 +141,10 @@
 <script src="./assets/js/script.js?v=1.0.2"></script>
 <script>
     function ready(){
-        document.querySelector('main.wrapper').style.opacity = '1';
-        document.getElementById('menu-container').style.opacity = '1';
-        document.querySelector('header').style.opacity = '1';
+        document.querySelector('main.wrapper').style.display = 'block';
+        document.getElementById('menu-container').style.display = 'block';
+        document.querySelector('header').style.display = 'block';
+        document.querySelector('.router-overlay').style.display = 'block';
     }
     document.addEventListener("DOMContentLoaded", ready);
 </script>
