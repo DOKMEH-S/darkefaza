@@ -65,7 +65,7 @@ $(document).ready(function () {
     } else {
         setTimeout(function () {
             $('html').addClass('loaded');
-            TweenMax.to(".router-overlay-first", 1.2, {scaleX: '0', ease: "power4.out"});
+            TweenMax.to(".router-overlay-first", 1.2, {scaleX: '0', ease: "power1.out"});
             setTimeout(function () {
                 initSlogan();
             },1300)
@@ -252,8 +252,9 @@ function ajaxSucses(){
         case "projects":
             $('header').addClass('projectHeader');
             setTimeout(function () {
-                $('section.projectsWrapper').css('pointer-events','auto')
-            },2500)
+                $('section.projectsContainer').css('pointer-events','auto');
+                loadTextScramble()
+            },2000)
             // ——————————————————————————————————————————————————
             // TextScramble
             // ——————————————————————————————————————————————————
@@ -324,22 +325,10 @@ function ajaxSucses(){
             // ——————————————————————————————————————————————————
             // Example
             // ——————————————————————————————————————————————————
-            $('section.projectsWrapper').mouseleave(function () {
-                console.log('mouseLeave')
-                $('.projectWrap').removeClass('hide-project-box');
-                let phrases = ['I am a very smart assist here for you'];
-
-
-                let el = document.getElementById('textTitle');
-                let fx = new TextScramble(el);
-
-                let counter = 0;
-                fx.setText(phrases[counter])
-            })
-            $('section.projectsWrapper .projectWrap').each(function () {
+            $('section.projectsContainer .projectWrap').each(function () {
                 var backColor = $(this).attr('data-color');
                 $(this).children('.projectMediaOverlayBoxWrap').children('.projectOverlayWrap').css('backgroundColor',backColor);
-                $(this).mouseenter(function () {
+                $(this).mouseover(function () {
                     let currentCategory = $(this).attr('data-category');
                     $('.projectWrap').addClass('hide-project-box');
                     $('.projectWrap[data-category="'+currentCategory+'"]').removeClass('hide-project-box');
@@ -354,13 +343,61 @@ function ajaxSucses(){
                     //$('.projectWrap').removeClass('hide-project-box');
                 })
             })
+            var isHere = true;
+            $('section.projectsContainer').mousemove(function () {
+                isHere= true;
+                if(isHere){
+                    $('section.projectsContainer .grid-item .projectWrap').on('mouseover',function () {
+                        let element = $(this),
+                            projectName = $('header.projectHeader .identity-text-title-wrap'),
+                            projectNameWidth = projectName.width(),
+                            currentWidth = element.width(),
+                            windowsWidth = $('section.projectsContainer').width(),
+                            currentHeight = element.height(),
+                            elementTop = element.offset().top,
+                            elementLeft = element.offset().left,
+                            finalCorX = currentWidth + elementLeft,
+                            finalCorY = elementTop,
+                            paddingX = parseInt($('main.projectsWrapper').css('paddingRight')),
+                            distanceToRight = windowsWidth - paddingX;
+                        if(distanceToRight > finalCorX){
+                            projectName.css({
+                                'left':finalCorX,
+                                'top':finalCorY
+                            })
+                        } else if (distanceToRight < finalCorX) {
+                            projectName.css({
+                                'left':finalCorX - currentWidth - projectNameWidth - 20,
+                                'top':finalCorY
+                            })
+                        }
+                        projectName.addClass('moving');
+                    });
+                }
+            })
+            $('section.projectsContainer').mouseleave(function () {
+                isHere = false;
+                $('.projectWrap').removeClass('hide-project-box');
+                let phrasessss = ['I am a very smart assist here for you'];
+                let elll = document.getElementById('textTitle');
+                let fxxx = new TextScramble(elll);
+                let counterrrr = 0;
+                fxxx.setText(phrasessss[counterrrr]);
 
-            $('section.projectsWrapper .grid-item .projectWrap .projectMediaOverlayBoxWrap .projectOverlayWrap').each(function () {
+                let projectName = $('header.projectHeader .identity-text-title-wrap');
+                projectName.css({
+                    'left':'0',
+                    'top':'0'
+                })
+                projectName.removeClass('moving');
+            })
+
+            $('section.projectsContainer .grid-item .projectWrap .projectMediaOverlayBoxWrap .projectOverlayWrap').each(function () {
                 let currentHeight = $(this).siblings('.projectMedia').children().height();
                 $(this).css('height',currentHeight);
             })
             setTimeout(function () {
-                $('section.projectsWrapper .grid-item .projectWrap .projectMediaOverlayBoxWrap .projectOverlayWrap').each(function () {
+                $('section.projectsContainer .grid-item .projectWrap .projectMediaOverlayBoxWrap .projectOverlayWrap').each(function () {
                     let currentHeight = $(this).siblings('.projectMedia').children().height();
                     $(this).css('height',currentHeight);
                 })

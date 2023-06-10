@@ -812,9 +812,10 @@ header.projectHeader::before {
 header.projectHeader .identity-text-title-wrap {
     position: fixed;
     height: 14vh;
-    left: 5vw;
+    left: 0;
     top: 0;
-    transition: all linear 0.5s;
+    transition: all ease-in-out 0.4s;
+    padding-left: 5vw;
 }
 
 header.projectHeader #menu {
@@ -965,11 +966,6 @@ footer.home-footer-contact-info a:last-child {
 html#night footer.home-footer-contact-info a:last-child {
     color: var(--white-color);
 }
-
-html#night footer.home-footer-contact-info {
-    border: unset;
-}
-
 /*============HOME==============*/
 /*============ABOUT==============*/
 section.aboutContainer {
@@ -1353,7 +1349,7 @@ html.fixed #filter {height: 8vh;}
     opacity: 0;
     top: 12vh;
 }
-section.projectsWrapper {
+section.projectsContainer {
     position: relative;
     width: 100%;
     display: block;
@@ -1371,7 +1367,7 @@ section.projectsWrapper {
     transition: opacity .6s cubic-bezier(.215,.61,.355,1),transform .6s cubic-bezier(.215,.61,.355,1),-webkit-transform .6s cubic-bezier(.215,.61,.355,1);
     pointer-events: none;
 }
-section.projectsWrapper .projectWrap .projectMedia img {
+section.projectsContainer .projectWrap .projectMedia img {
     width: 100%;
     max-width: 100%;
     height: auto;
@@ -1380,7 +1376,7 @@ section.projectsWrapper .projectWrap .projectMedia img {
     height: 1.6rem;
 }
 html.fixed #filter {height: 8vh;}
-section.projectsWrapper .grid-item .projectWrap .projectMediaOverlayBoxWrap .plus-box {
+section.projectsContainer .grid-item .projectWrap .projectMediaOverlayBoxWrap .plus-box {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1392,21 +1388,21 @@ section.projectsWrapper .grid-item .projectWrap .projectMediaOverlayBoxWrap .plu
     transition: all linear .4s;
     opacity: 0;
 }
-section.projectsWrapper .grid-item .projectWrap > span {
+section.projectsContainer .grid-item .projectWrap > span {
     display: none;
 }
-section.projectsWrapper .grid-item .projectWrap .projectMediaOverlayBoxWrap .plus-box img {
+section.projectsContainer .grid-item .projectWrap .projectMediaOverlayBoxWrap .plus-box img {
     height: 2.5rem;
 }
-section.projectsWrapper .grid-item:nth-of-type(odd) .projectWrap {
+section.projectsContainer .grid-item:nth-of-type(odd) .projectWrap {
 }
 #filter.loaded {
     opacity: 1;
 }
-section.projectsWrapper .grid-item .projectWrap.hide-project-box {
+section.projectsContainer .grid-item .projectWrap.hide-project-box {
     opacity: 0;
 }
-main.projectsWrapper.loaded section.projectsWrapper {
+main.projectsWrapper.loaded section.projectsContainer {
     opacity: 1;
     -webkit-transform: unset;
     -ms-transform: unset;
@@ -1415,10 +1411,10 @@ main.projectsWrapper.loaded section.projectsWrapper {
     -o-transition-delay: 0.5s;
     transition-delay: 0.5s;
 }
-section.projectsWrapper .grid-item .projectWrap .projectMediaOverlayBoxWrap {
+section.projectsContainer .grid-item .projectWrap .projectMediaOverlayBoxWrap {
     position: relative;
 }
-section.projectsWrapper .grid-item .projectWrap .projectMediaOverlayBoxWrap .projectOverlayWrap {
+section.projectsContainer .grid-item .projectWrap .projectMediaOverlayBoxWrap .projectOverlayWrap {
     position: absolute;
     width: 100%;
     height: 99%;
@@ -1433,21 +1429,21 @@ section.projectsWrapper .grid-item .projectWrap .projectMediaOverlayBoxWrap .pro
     transition: all linear .4s;
     opacity: 0;
 }
-section.projectsWrapper .grid-item .projectWrap:hover .projectMediaOverlayBoxWrap .plus-box {
+section.projectsContainer .grid-item .projectWrap:hover .projectMediaOverlayBoxWrap .plus-box {
     opacity: 1;
 }
 
-section.projectsWrapper .grid-item .projectWrap:hover .projectMediaOverlayBoxWrap .projectOverlayWrap {
+section.projectsContainer .grid-item .projectWrap:hover .projectMediaOverlayBoxWrap .projectOverlayWrap {
     opacity: .55;
 }
-section.projectsWrapper .grid-item .projectWrap .projectMediaOverlayBoxWrap .projectOverlayWrap img {
+section.projectsContainer .grid-item .projectWrap .projectMediaOverlayBoxWrap .projectOverlayWrap img {
     height: 4rem;
 }
 #filter span {
     text-transform: capitalize;
     font-size: 1.2rem;
 }
-section.projectsWrapper .grid-item .projectWrap {
+section.projectsContainer .grid-item .projectWrap {
     padding-bottom: 2rem;
     position: relative;
     width: 100%;
@@ -1457,10 +1453,10 @@ section.projectsWrapper .grid-item .projectWrap {
     transition: all ease-in .4s;
 }
 
-section.projectsWrapper .projectWrap .projectMedia {
+section.projectsContainer .projectWrap .projectMedia {
 }
 
-section.projectsWrapper .grid-item .projectWrap p.title {
+section.projectsContainer .grid-item .projectWrap p.title {
     font-size: 1.1rem;
 }
 #filterContainer .box {
@@ -1709,6 +1705,17 @@ html.op-filter #body-overlay {
     background-color: var(--gray-color);
     outline: 1px solid var(--gray-color);
     border-radius: 10px;
+}
+header.projectHeader .identity-text-title-wrap.moving {
+    padding-left: 1rem;
+    pointer-events:none
+}
+
+header.projectHeader .identity-text-title-wrap.moving .identity svg {
+    height: 4rem;
+}
+header.projectHeader .identity-text-title-wrap.moving #textTitle {
+    margin-left: 1rem;
 }
 /*============PROJECTS==============*/
 /*=========SINGLE PROJECTS==========*/
@@ -2925,7 +2932,9 @@ html[data-color="green"]#night footer .copyright-wrap a svg path,html[data-color
 html[data-color="orange"]#night footer .copyright-wrap a svg path,html[data-color="orange"]#night footer .copyright-wrap a svg polygon {
     fill: var(--pallet-orange-color-main);
 }
-
+html#night footer.home-footer-contact-info {
+    border: unset;
+}
 
 html[data-color="red"] .memberCard{
     --highlight: var(--pallet-red-color);
