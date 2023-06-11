@@ -2512,6 +2512,34 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     #menu-container nav .middle .containTwo > .menu-item {
         height: 70%;
     }
+    #menu-container .colorPallet-container .colorPallet-item {
+        width: 30px;
+        height: 30px;
+    }
+
+    #menu-container .colorPallet-container .colorPallet-item span {
+        width: 10px;
+        height: 10px;
+    }
+    #menu-container .colorPallet-container {
+        column-gap: 15px;
+        width: calc(30px*4 + 15px*3);
+    }
+
+    #menu-container .colorPallet-container .colorPallet-item:nth-child(2) {
+        transform: translateX(calc(30px*1 + 15px*1)) !important;
+    }
+
+    #menu-container .colorPallet-container .colorPallet-item:nth-child(3) {
+        transform: translateX(calc(30px*2 + 15px*2)) !important;
+    }
+
+    #menu-container .colorPallet-container .colorPallet-item:nth-child(4) {
+        transform: translateX(calc(30px*3 + 15px*3)) !important;
+    }
+    #menu-container .colorPallet-container.selected {
+        width: calc(30px*4 + 15px*3);
+    }
     /*==========NAV & HEADER=============*/
     /*==========HOME=============*/
     main.homeWrapper section.home-slogan-container .slogan-info {
@@ -2662,12 +2690,42 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         transform: unset !important;
     }
 }
+@media only screen and (min-width: 250px) and (max-width: 374px){
+    /*===========NAV & HEADER============*/
+    #menu-container .colorPallet-container .colorPallet-item span {
+        width: 8px;
+        height: 8px;
+    }
+    #menu-container .colorPallet-container .colorPallet-item {
+        width: 25px;
+        height: 25px;
+    }
+    #menu-container .colorPallet-container.selected {
+        column-gap: 13px;
+        width: calc(25px*4 + 13px*3);
+    }
+    #menu-container .colorPallet-container .colorPallet-item:nth-child(2) {
+        transform: translateX(calc(25px*1 + 13px*1)) !important;
+    }
+    #menu-container .colorPallet-container .colorPallet-item:nth-child(3) {
+        transform: translateX(calc(25px*2 + 13px*2)) !important;
+    }
+    #menu-container .colorPallet-container .colorPallet-item:nth-child(4) {
+        transform: translateX(calc(25px*3 + 13px*3)) !important;
+    }
+    .menu-contact-info-wrap {
+        font-size: .7rem;
+    }
+    /*===========NAV & HEADER============*/
+}
 @media only screen and (min-width: 640px) and (max-width: 768px) {
     /*==========NAV & HEADER==============*/
     #menu-container.whiteMenu nav ul li a {
         font-size: 1.4rem;
     }
-
+    #menu-container nav {
+        margin: auto;
+    }
     #menu-container.whiteMenu nav ul li {
         line-height: 1.5;
     }
@@ -2679,9 +2737,22 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     main.homeWrapper section.home-slogan-container {
         padding: 20px 20px 3rem;
     }
+    main.homeWrapper {
+        height: 100vh;
+    }
+
+    main.homeWrapper section.home-about-container {
+        width: 50%;
+    }
     /*=============HOME================*/
 }
 @media only screen and (min-width: 769px) and (max-width: 1199px){
+    /*==========GENERAL CLASS===========*/
+    .mBox {
+        opacity: 1 !important;
+        transform: unset !important;
+    }
+    /*==========GENERAL CLASS===========*/
     /*============LOADING==============*/
     #loading .loading-text p {
         font-size: 5rem;
@@ -2701,15 +2772,12 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         height: 6vh;
         width: auto;
     }
-    #menu-container {
-        right: 3vw;
-        height: 9vh;
-    }
     #menu-container nav ul li a {
         font-size: 1rem;
     }
     main.homeWrapper section.home-about-container {
         width: 35vw;
+        top: 11vh;
     }
     main.homeWrapper section.home-about-container .video-wrap{
         height: 9vh;
@@ -2717,6 +2785,79 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     main.homeWrapper section.home-slogan-container .slogan-info h1 {
         margin-top: 0;
         line-height: 1.2;
+    }
+    #menu-container .colorPallet-title-container {
+        margin: 0;
+        position: absolute;
+        bottom: 4rem;
+        left: 5vw;
+    }
+    .menu-contact-info-wrap {
+        left: auto;
+        right: 5vw;
+        bottom: 4rem;
+    }
+    #menu-container .colorPallet-container.selected {
+        width: calc(35px*4 + 22px*3);
+    }
+    #menu-container .colorPallet-container .colorPallet-item:nth-child(2) {
+        transform: translateX(calc(35px*1 + 22px*1)) !important;
+    }
+    #menu-container .colorPallet-container .colorPallet-item:nth-child(3) {
+        transform: translateX(calc(35px*2 + 22px*2)) !important;
+    }
+    #menu-container .colorPallet-container .colorPallet-item:nth-child(4) {
+        transform: translateX(calc(35px*3 + 22px*3)) !important;
+    }
+    #menu-container nav {
+        height: auto;
+        margin: 0 auto;
+    }
+
+    #menu-container {
+        align-items: center;
+    }
+
+    #menu-container nav .top .menu-item:nth-child(1) .img {
+        width: 18vw;
+        height: 24vh;
+    }
+
+    #menu-container nav .top .menu-item:nth-child(2) .img {
+        width: 17vw;
+        height: 13vh;
+    }
+
+    #menu-container nav .middle .containTwo .img {
+        width: 18vw;
+    }
+
+    #menu-container nav .middle > .menu-item .img {
+        width: 36vw;
+        height: 100%;
+    }
+
+    #menu-container nav .middle {
+        align-items: flex-start;
+        justify-content: center;
+        height: 35vh;
+    }
+
+    #menu-container nav .menu-item img, #menu-container nav .menu-item video {
+        height: 100%;
+    }
+
+    #menu-container nav .menu-item {
+        height: 100%;
+    }
+
+    #menu-container nav .bottom .menu-item .img {
+        width: 28vw;
+        height: 10vh;
+    }
+
+    #menu-container nav .middle .containTwo {
+        height: 85%;
     }
     /*=========NAV & HEADER============*/
     /*=========HOME============*/
