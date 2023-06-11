@@ -1183,6 +1183,7 @@ section.aboutAwardsContainer .awards-wrapper .awards-wrap:last-child {
     object-fit: cover;
     position: absolute;
     bottom: 0;
+    transition: all ease-in-out .4s;
 }
 section.aboutMemberContainer {
     position: relative;
@@ -1203,6 +1204,7 @@ section.aboutMemberContainer h2 {
 
 section.aboutMemberContainer h2 {
     font-size: 2rem;
+    margin-bottom: 2rem;
 }
 section.aboutMemberContainer .membersWrapper {
     position: relative;
@@ -2378,6 +2380,10 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         padding-left: 20px;
         padding-right: 20px;
     }
+    .mBox {
+        opacity: 1 !important;
+        transform: unset !important;
+    }
     /*==========GENERAL CLASS=============*/
     /*==========LOADING=============*/
     #loading .loading-text p {
@@ -2593,7 +2599,7 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     }
     section.aboutContainer .element-wrap {
         width: 100%;
-        height: 45vh;
+        height: 26vh;
     }
     section.aboutContainer .element-wrap .logo {
         height: 100%;
@@ -2603,8 +2609,51 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         height: 100%;
         object-fit: contain;
     }
-    section.aboutContainer .element-wrap h1 {
-        font-size: 1.3rem;
+    section.aboutAwardsContainer h2 {
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .aboutCEOWrapper .CEOWrap .ceo-info h2 {
+        font-size: 1.8rem;
+    }
+
+    section.aboutMissionVisionContainer .missionVisionWrap h2 {
+        font-size: 1.8rem;
+    }
+
+    main.aboutUsWrapper h1,main.aboutUsWrapper h2 {
+        margin-top: 0;
+    }
+
+    section.aboutAwardsContainer .awards-wrapper .awards-wrap {
+        flex-wrap: wrap;
+        row-gap: .5rem;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    section.aboutAwardsContainer .awards-wrapper .awards-wrap .awards-title {
+        flex: unset;
+    }
+
+    section.aboutAwardsContainer .awards-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 20px;
+    }
+
+    section.aboutAwardsContainer {
+        padding-bottom: 5rem;
+    }
+
+    section.aboutMemberContainer .membersWrapper .memberCard {
+        width: 100%;
+    }
+
+    section.aboutMemberContainer {
+        padding-bottom: 4rem;
     }
     section.aboutMissionVisionContainer {
         padding-top: 2rem;
@@ -2619,13 +2668,17 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     }
     .aboutCEOWrapper .CEOWrap .ceo-info {
         width: 100%;
+        text-align: left;
     }
 
     .aboutCEOWrapper .CEOWrap .ceo-media {
         width: 100%;
     }
     .aboutCEOWrapper {
-        padding-bottom: 3rem;
+        padding-bottom: 4rem;
+    }
+    .memberCard > img {
+        transition: all ease-in-out 0.5s;
     }
     /*==========ABOUT=============*/
     /*==========CONTACT=============*/
@@ -2685,10 +2738,20 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         justify-content: flex-end;
     }
     /*==========BLOG=============*/
-    .mBox {
-        opacity: 1 !important;
-        transform: unset !important;
+    /*==========FOOTER=============*/
+    footer {
+        width: calc(100% - 40px);
+        flex-wrap: wrap;
+        padding: 2rem 0;
     }
+
+    footer .copyright-wrap {
+        text-align: center;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    /*==========FOOTER=============*/
 }
 @media only screen and (min-width: 250px) and (max-width: 374px){
     /*===========NAV & HEADER============*/
@@ -2745,12 +2808,43 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         width: 50%;
     }
     /*=============HOME================*/
+    /*=============ABOUT================*/
+    section.aboutMissionVisionContainer .missionVisionWrap {
+        width: 48%;
+    }
+
+    .aboutCEOWrapper .CEOWrap .ceo-info {
+        width: 50%;
+    }
+
+    .aboutCEOWrapper .CEOWrap .ceo-media {
+        width: 48%;
+    }
+
+    section.aboutAwardsContainer .awards-wrapper .awards-wrap {
+        flex-direction: row;
+        column-gap: 1.5rem;
+    }
+
+    section.aboutAwardsContainer .awards-wrapper .awards-wrap .award-media {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    section.aboutMemberContainer .membersWrapper .memberCard {
+        width: 50%;
+    }
+    /*=============ABOUT================*/
 }
 @media only screen and (min-width: 769px) and (max-width: 1199px){
     /*==========GENERAL CLASS===========*/
     .mBox {
         opacity: 1 !important;
         transform: unset !important;
+    }
+    .padding-class-big {
+        padding-left: 5vw;
+        padding-right: 5vw;
     }
     /*==========GENERAL CLASS===========*/
     /*============LOADING==============*/
@@ -2865,6 +2959,51 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         width: 52%;
     }
     /*=========HOME============*/
+    /*=========ABOUT US============*/
+    section.aboutContainer {
+        padding-top: 18rem;
+    }
+    section.aboutContainer .element-wrap {
+        height: auto;
+    }
+    section.aboutContainer .info-wrap {
+        width: 48%;
+    }
+    section.aboutMissionVisionContainer {
+        padding-top: 7rem;
+        padding-bottom: 7rem;
+    }
+    section.aboutMissionVisionContainer .missionVisionWrap {
+        width: 48%;
+    }
+    .aboutCEOWrapper {
+        padding-bottom: 5rem;
+    }
+
+    section.aboutAwardsContainer .awards-wrapper .awards-wrap .award-media {
+        width: 4rem;
+        height: 4rem;
+    }
+    section.aboutAwardsContainer .awards-wrapper .awards-wrap .awards-for-whose-project {
+        flex: 2;
+    }
+    section.aboutAwardsContainer .awards-wrapper .awards-wrap .awards-year {
+        flex: 1;
+    }
+    section.aboutAwardsContainer {
+        padding-bottom: 5rem;
+    }
+    section.aboutMemberContainer {
+        padding-bottom: 5rem;
+    }
+    /*=========ABOUT US============*/
+}
+@media only screen and (min-width: 769px) and (max-width: 1030px) {
+    /*==========ABOUT US===========*/
+    .memberCard > img{
+        transition: all ease-in-out 0.5s;
+    }
+    /*==========ABOUT US===========*/
 }
 @media only screen and (min-width: 1200px) and (max-width: 1401px){
     /*=========LOADING============*/
@@ -2918,6 +3057,33 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         bottom: 2rem;
     }
     /*=============HOME===============*/
+    /*=============ABOUT===============*/
+    section.aboutContainer {
+        padding-top: 8rem;
+    }
+
+    section.aboutContainer .element-wrap {
+        height: 45vh;
+    }
+
+    section.aboutMissionVisionContainer {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+
+    main.aboutUsWrapper h1,main.aboutUsWrapper h2 {
+        font-size: 1.9rem !important;
+    }
+    section.aboutMemberContainer {
+        padding-bottom: 6rem;
+    }
+    .aboutCEOWrapper {
+        padding-bottom: 6rem;
+    }
+    section.aboutAwardsContainer {
+        padding-bottom: 6rem;
+    }
+    /*=============ABOUT===============*/
 }
 @media only screen and (min-width: 1401px) and (max-width: 1600px){
     /*=========LOADING============*/
@@ -2971,6 +3137,30 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         bottom: 2rem;
     }
     /*=============HOME===============*/
+    /*=============ABOUT===============*/
+    section.aboutContainer {
+        padding-top: 10rem;
+    }
+    section.aboutMissionVisionContainer {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+    section.aboutContainer .element-wrap {
+        height: 55vh;
+    }
+
+    .aboutCEOWrapper {
+        padding-bottom: 6rem;
+    }
+
+    section.aboutAwardsContainer {
+        padding-bottom: 6rem;
+    }
+
+    section.aboutMemberContainer {
+        padding-bottom: 7rem;
+    }
+    /*=============ABOUT===============*/
 }
 /*---------------------------------------------------colors*/
 html[data-color="red"] .cursor2 {
