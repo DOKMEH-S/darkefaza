@@ -2384,6 +2384,10 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         opacity: 1 !important;
         transform: unset !important;
     }
+    .padding-class-sm{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
     /*==========GENERAL CLASS=============*/
     /*==========LOADING=============*/
     #loading .loading-text p {
@@ -2718,7 +2722,7 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     }
     main.blogWrapper section.blogContainer .blog-wrap .news-date span {
         writing-mode: tb;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     main.blogWrapper section.blogContainer .blog-wrap {
         margin-bottom: 60px;
@@ -2733,9 +2737,14 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         padding: 2rem 0;
     }
     main.blogWrapper section.blogContainer .blog-wrap .news-date {
-        -webkit-box-pack: end;
-        -ms-flex-pack: end;
-        justify-content: flex-end;
+        justify-content: center !important;
+        height: 30vh;
+    }
+    main.blogWrapper section.blogContainer .blog-wrap .blog-media-info-wrap .blog-media img {
+        height: 100%;
+    }
+    main.blogWrapper section.blogContainer .blog-wrap .blog-media-info-wrap .blog-media {
+        height: 30vh;
     }
     /*==========BLOG=============*/
     /*==========FOOTER=============*/
@@ -2997,6 +3006,17 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         padding-bottom: 5rem;
     }
     /*=========ABOUT US============*/
+    /*=========BLOG============*/
+    main.blogWrapper section.blogContainer .blog-wrap .blog-media-info-wrap .blog-media {
+        height: 20vh;
+    }
+    main.blogWrapper section.blogContainer .blog-wrap .news-date {
+        height: 20vh;
+    }
+    main.blogWrapper section.blogContainer .blog-wrap .news-date span {
+        font-size: 1.6rem;
+    }
+    /*=========BLOG============*/
 }
 @media only screen and (min-width: 769px) and (max-width: 1030px) {
     /*==========ABOUT US===========*/
