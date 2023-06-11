@@ -693,6 +693,7 @@ header #menu {
 
 header .identity svg {
     height: 9vh;
+    width: auto;
 }
 header #menu .menuBoxes svg {
     height: 9vh;
@@ -2439,6 +2440,7 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         display: flex;
         align-items: center;
         width: 100%;
+        height: auto;
     }
     #menu-container.whiteMenu nav ul li a {
         color: #000;
@@ -2455,6 +2457,60 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     html.op-menu header.whiteHeader #menuMobile .menuBoxes span:last-child {
         opacity: 1;
         transform: rotate(-35deg) translate(3px, -5px);
+    }
+    #menu-container nav .top .menu-item:nth-child(1) .img {
+        width: 16vw;
+        height: 18vh;
+    }
+
+    #menu-container .colorPallet-title-container {
+        position: absolute;
+        bottom: 20px;
+        margin: 0;
+        left: 20px;
+    }
+
+    #menu-container nav .top .menu-item:nth-child(2) .img {
+        width: 14vw;
+        height: 10vh;
+    }
+
+    #menu-container nav .middle {
+        height: 32vh;
+        justify-content: center;
+    }
+
+    #menu-container nav .menu-item {
+        padding: 4px;
+    }
+
+    #menu-container nav .middle .containTwo .img {
+        width: 16vw;
+    }
+    #menu-container nav .middle > .menu-item .img {
+        width: 33vw;
+    }
+    #menu-container nav .bottom .menu-item .img {
+        width: 25vw;
+        height: 8vh;
+    }
+    #menu-container nav .middle > .menu-item .img {
+        width: 33vw;
+    }
+    #menu-container nav .middle .containTwo > .menu-item:last-child {
+        height: 50%;
+    }
+    .menu-contact-info-wrap {
+        left: auto;
+        right: 20px;
+        bottom: 20px;
+        flex-direction: column;
+        display: flex;
+        row-gap: 4px;
+        font-size: .8rem;
+    }
+    #menu-container nav .middle .containTwo > .menu-item {
+        height: 70%;
     }
     /*==========NAV & HEADER=============*/
     /*==========HOME=============*/
@@ -2663,6 +2719,11 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         line-height: 1.2;
     }
     /*=========NAV & HEADER============*/
+    /*=========HOME============*/
+    main.homeWrapper section.home-slogan-container .slogan-info {
+        width: 52%;
+    }
+    /*=========HOME============*/
 }
 @media only screen and (min-width: 1200px) and (max-width: 1401px){
     /*=========LOADING============*/
@@ -2675,8 +2736,6 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     }
     /*=========LOADING============*/
     /*=========NAV & HEADER============*/
-    header .identity svg {
-    }
 
     #menu-container nav ul li a {
         font-size: .9rem;
@@ -2688,8 +2747,9 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     /*=========NAV & HEADER============*/
     /*=============HOME===============*/
     main.homeWrapper section.home-slogan-container .slogan-info h1 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         margin-top: 0;
+        line-height: 1.4;
     }
 
     main.homeWrapper section.home-slogan-container .slogan-info p {
@@ -2697,7 +2757,24 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     }
 
     main.homeWrapper section.home-slogan-container {
-        padding-bottom: 3rem;
+        padding-bottom: 2rem;
+    }
+    main.homeWrapper section.home-about-container {
+        width: 25vw;
+        font-size: .85rem;
+    }
+
+    main.homeWrapper section.home-about-container .content {
+        margin-bottom: 1.5rem;
+    }
+
+    main.homeWrapper section.home-about-container .content p {
+        margin-top: 0;
+    }
+
+    footer.home-footer-contact-info {
+        font-size: .8rem;
+        bottom: 2rem;
     }
     /*=============HOME===============*/
 }
@@ -2735,7 +2812,22 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     }
 
     main.homeWrapper section.home-slogan-container {
-        padding-bottom: 4rem;
+        padding-bottom: 3rem;
+    }
+    main.homeWrapper section.home-about-container {
+        width: 28vw;
+    }
+
+    main.homeWrapper section.home-about-container .content p {margin-top: 0;}
+
+    main.homeWrapper section.home-about-container .content {
+        margin-bottom: 2rem;
+        font-size: .9rem;
+    }
+
+    footer.home-footer-contact-info {
+        font-size: .9rem;
+        bottom: 2rem;
     }
     /*=============HOME===============*/
 }

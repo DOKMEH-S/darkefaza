@@ -63,38 +63,38 @@
         </div>
     </div>
     <div class="menu-contact-info-wrap">
-        <a href="">last work ! </a>
+        <a href="" class="menuItem">last work ! </a>
         <a href="">+98 21 22 5588 77</a>
     </div>
     <nav class="menu">
         <div class="top">
-            <a href="./index-after-view.html" class="menu-item">
+            <a href="./index-after-view.html" class="menu-item menuItem">
                 <div class="img"><img src="./assets/img/sample/menu-01.jpg" alt=""></div>
                 <span data-number="01">Home</span>
             </a>
-            <a href="./contact-us.html" class="menu-item">
+            <a href="./contact-us.html" class="menu-item menuItem">
                 <div class="img"><img src="./assets/img/sample/menu-02.jpg" alt=""></div>
                 <span data-number="02">Contact us</span>
             </a>
         </div>
         <div class="middle">
             <div class="containTwo">
-                <a href="./blog.html" class="menu-item">
+                <a href="./blog.html" class="menu-item menuItem">
                     <div class="img"><img src="./assets/img/sample/menu-03.jpg" alt=""></div>
                     <span data-number="03">Blogs</span>
                 </a>
-                <a href="./archive-arts.html" class="menu-item">
+                <a href="./archive-arts.html" class="menu-item menuItem">
                     <div class="img"><img src="./assets/img/sample/menu-05.jpg" alt=""></div>
                     <span data-number="04">arts</span>
                 </a>
             </div>
-            <a href="archive-projects.html" class="menu-item">
+            <a href="archive-projects.html" class="menu-item menuItem">
                 <div class="img"><img src="./assets/img/sample/menu-04.jpg" alt=""></div>
                 <span data-number="05">Projects</span>
             </a>
         </div>
         <div class="bottom">
-            <a href="./about-us.html" class="menu-item">
+            <a href="./about-us.html" class="menu-item menuItem">
                 <div class="img"><img src="./assets/img/sample/menu-06.jpg" alt=""></div>
                 <span data-number="06">About</span>
             </a>
@@ -126,7 +126,7 @@
                 </div>
             </section>
             <footer class="home-footer-contact-info mBox">
-                <a href="">last work ! </a>
+                <a href="" class="menuItem">last work ! </a>
                 <a href="">+98 21 22 5588 77</a>
             </footer>
         </main>
@@ -145,11 +145,15 @@
 <script>
     function ready(){
         document.querySelector('main.wrapper').style.opacity = '1';
-        document.getElementById('menu-container').style.opacity = '1';
         document.querySelector('header').style.opacity = '1';
-        document.querySelector('.router-overlay').style.opacity = '1';
     }
     document.addEventListener("DOMContentLoaded", ready);
+    $(document).ready(function () {
+        setTimeout(function () {
+            document.querySelector('.router-overlay').style.opacity = '1';
+            document.getElementById('menu-container').style.opacity = '1';
+        },2000)
+    })
 </script>
 </body>
 </html>
