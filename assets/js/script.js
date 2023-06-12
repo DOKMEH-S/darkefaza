@@ -8,7 +8,7 @@ $('#menu').addClass('hover-target');
 /*====================DETECT TIME=====================*/
 const hours = new Date().getHours()
 const isDayTime = hours > 6 && hours < 20;
-if (isDayTime === true) {
+if (isDayTime === false) {
     document.querySelector('html').style.backgroundColor = '#1E1E1E';
     $('html').attr('id', 'night');
 } else {
@@ -442,14 +442,17 @@ function ajaxSucses(){
 })(jQuery);
 
 /*====================Route=====================*/
-$('.menuItem').each(function(){
-    $(this).click(function (e) {
-        // e.preventDefault();
-        var URL = $(this).attr('href');
-        $('.router-overlay').addClass('inSight');
-        setTimeout(function () {
-            window.location = URL;
-        },1200);
-    })
-});
+$(document).ready(function () {
+    $('.menuItem').each(function(){
+        $(this).click(function (e) {
+            $('.router-overlay').addClass('inSight');
+             e.preventDefault();
+            var URL = $(this).attr('href');
+            setTimeout(function () {
+                window.location = URL;
+            },1200);
+            console.log(URL);
+        })
+    });
+})
 /*====================Route=====================*/

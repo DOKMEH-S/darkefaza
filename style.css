@@ -64,8 +64,10 @@ h2,h3,h4,h5,h6 {
 html.op-menu {
     overflow: hidden;
 }
-body{
+html#day body{
     background-color: var(--white-color);
+}
+html#day[data-color="blue"] body{
     color: var(--blue-color);
 }
 html[data-color="red"] body{
@@ -238,7 +240,6 @@ input[type="number"]{
     height: 100%;
     left: 0;
     top: 0;
-    background-color: var(--blue-color);
     pointer-events: none;
     z-index: 9998;
     transform-origin: left;
