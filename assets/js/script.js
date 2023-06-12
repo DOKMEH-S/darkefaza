@@ -11,8 +11,21 @@ const isDayTime = hours > 6 && hours < 20;
 if (isDayTime === false) {
     document.querySelector('html').style.backgroundColor = '#1E1E1E';
     $('html').attr('id', 'night');
+} else {
+    $('html').attr('id', 'day');
 }
 /*====================DETECT TIME=====================*/
+/*====================Route=====================*/
+$('.menuItem').click(function (e) {
+    e.preventDefault();
+    $('.router-overlay').addClass('inSight');
+    var URL = $(this).attr('href');
+    setTimeout(function () {
+        window.location = URL;
+    }, 1200);
+
+});
+/*====================Route=====================*/
 /*====================DETECT COLOR=====================*/
 $('#menu-container .colorPallet-container .colorPallet-item').each(function (){
     $(this).click(function (){
@@ -93,16 +106,6 @@ $(document).ready(function () {
     $('#menuMobile').click(function () {
         $('html').toggleClass('op-menu');
     })
-
-    $('.menuItem').click(function (e) {
-        e.preventDefault();
-        $('.router-overlay').addClass('inSight');
-        var URL = $(this).attr('href');
-        setTimeout(function () {
-            window.location = URL;
-        }, 1200);
-
-    });
 })
 function backButtonEvent() {
     ScrollTrigger.refresh();

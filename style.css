@@ -214,7 +214,6 @@ input[type="number"]{
     height: 100%;
     left: 0;
     top: 0;
-    background-color: var(--pallet-blue-color);
     pointer-events: none;
     z-index: 9998;
     /*display: none;*/
@@ -227,9 +226,6 @@ input[type="number"]{
     -webkit-transition: transform  ease-in-out 1200ms;
     -o-transition: transform  ease-in-out 1200ms;
     transition: transform ease-in-out 1200ms;
-}
-html#night .router-overlay{
-    background-color: var(--pallet-blue-color-main);
 }
 .router-overlay.inSight{
     -webkit-transform: scaleX(1);
@@ -656,12 +652,12 @@ html#night #menu-container .colorPallet-container .colorPallet-item:nth-child(4)
     margin-bottom: 10px;
 }
 header.bg-effect::before {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 1);
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
 }
 html#night header.bg-effect::before {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(30, 30, 30, 1);
 }
 header::before {
     content: '';
@@ -700,10 +696,14 @@ header #menu .menuBoxes svg {
     position: relative;
 }
 header #menu .menuBoxes svg rect {
-    stroke: var(--pallet-blue-color);
     transition: all ease-in .4s;
     transition-delay: 0s;
+}
+html #day{
     fill: var(--white-color) !important;
+}
+html #night{
+    fill: var(--night-bg) !important;
 }
 body.opMenu header #menu .menuBoxes svg rect {
     position: absolute;
@@ -739,16 +739,6 @@ body.opMenu header #menu .menuBoxes svg rect:last-child {
     fill: var(--white-color) !important;
     z-index: 2;
     transition-delay: 0s;
-}
-html#night header #menu .menuBoxes svg rect {
-    stroke: var(--pallet-blue-color-main);
-}
-header .identity svg g path {
-    fill: var(--pallet-blue-color);
-    transition: all ease-in-out .4s;
-}
-html#night header .identity svg g path {
-    fill: var(--pallet-blue-color-main);
 }
 header #menu .text {
     position: relative;
@@ -3818,5 +3808,39 @@ html#night {
 }
 html#night header #menu .menuBoxes svg rect{
     fill: var(--night-bg) !important;
+}
+html#night header #menu .menuBoxes svg rect {
+    stroke: var(--pallet-blue-color-main);
+}
+header .identity svg g path {
+    fill: var(--pallet-blue-color);
+    transition: all ease-in-out .4s;
+}
+html#night header .identity svg g path {
+    fill: var(--pallet-blue-color-main);
+}
+html[data-color="blue"] header #menu .menuBoxes svg rect{
+    stroke: var(--pallet-blue-color);
+}
+html[data-color="orange"] header #menu .menuBoxes svg rect{
+    stroke: var(--pallet-orange-color);
+}
+html[data-color="red"] header #menu .menuBoxes svg rect{
+    stroke: var(--pallet-red-color);
+}
+html[data-color="green"] header #menu .menuBoxes svg rect{
+    stroke: var(--pallet-green-color);
+}
+html#night[data-color="blue"] header #menu .menuBoxes svg rect{
+    stroke: var(--pallet-blue-color-main);
+}
+html#night[data-color="orange"] header #menu .menuBoxes svg rect{
+    stroke: var(--pallet-orange-color-main);
+}
+html#night[data-color="red"] header #menu .menuBoxes svg rect{
+    stroke: var(--pallet-red-color-main);
+}
+html#night[data-color="green"] header #menu .menuBoxes svg rect{
+    stroke: var(--pallet-green-color-main);
 }
 /*---------------------------------------------------colors*/
