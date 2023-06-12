@@ -8,7 +8,7 @@ $('#menu').addClass('hover-target');
 /*====================DETECT TIME=====================*/
 const hours = new Date().getHours()
 const isDayTime = hours > 6 && hours < 20;
-if (isDayTime === true) {
+if (isDayTime === false) {
     document.querySelector('html').style.backgroundColor = '#1E1E1E';
     $('html').attr('id', 'night');
 }
