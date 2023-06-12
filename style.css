@@ -2173,7 +2173,14 @@ section.singleBlogSideBarWrapper .single-blog-content img {
 .contactContainer .contact_info .title > * {
     display: block;
 }
+.contactItemsWrap {
+    width: 100%;
+}
 
+.contactItemsWrap img {
+    width: 100%;
+    height: auto;
+}
 .contactContainer .contact_info .title > *:last-child {
     font-weight: 700;
     font-size: 2.5rem;
