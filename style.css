@@ -326,7 +326,6 @@ input[type="number"]{
     top: 0;
     left: 0;
     z-index: 9999;
-    background-color: var(--pallet-blue-color);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -712,10 +711,6 @@ body.opMenu header #menu .menuBoxes svg rect {
     z-index: 0;
     transition-delay: 0.2s;
 }
-header #menu .menuBoxes svg rect:last-child {
-    fill: var(--white-color) !important;
-}
-
 header #menu .menuBoxes svg rect:nth-of-type(2) {
     transition-delay: 0.2s;
 }
@@ -3741,28 +3736,28 @@ html#night[data-color="green"] section.singleProjectGalleryTitleWrap .title-arro
 body.opMenu header #menu .menuBoxes svg rect:last-child body.opMenu header #menu .menuBoxes svg rect:last-child {
     transition-delay: .2s;
 }
-html[data-color="orange"] .router-overlay-first{
+html#day[data-color="orange"] .router-overlay-first{
     background-color: var(--pallet-orange-color);
 }
-html[data-color="red"] .router-overlay-first{
+html#day[data-color="red"] .router-overlay-first{
     background-color: var(--pallet-red-color);
 }
-html[data-color="green"] .router-overlay-first{
+html#day[data-color="green"] .router-overlay-first{
     background-color: var(--pallet-green-color);
 }
-html[data-color="blue"] .router-overlay-first{
+html#day[data-color="blue"] .router-overlay-first{
     background-color: var(--pallet-blue-color);
 }
-html[data-color="orange"] .router-overlay{
+html#day[data-color="orange"] .router-overlay{
     background-color: var(--pallet-orange-color);
 }
-html[data-color="red"] .router-overlay{
+html#day[data-color="red"] .router-overlay{
     background-color: var(--pallet-red-color);
 }
-html[data-color="green"] .router-overlay{
+html#day[data-color="green"] .router-overlay{
     background-color: var(--pallet-green-color);
 }
-html[data-color="blue"] .router-overlay{
+html#day[data-color="blue"] .router-overlay{
     background-color: var(--pallet-blue-color);
 }
 html#night[data-color="orange"] .router-overlay-first{
@@ -3789,19 +3784,38 @@ html#night[data-color="green"] .router-overlay{
 html#night[data-color="blue"] .router-overlay{
     background-color: var(--pallet-blue-color-main);
 }
+html#day[data-color="blue"] #loading{
+    background-color: var(--pallet-blue-color);
+}
+html#day[data-color="red"] #loading{
+    background-color: var(--pallet-red-color);
+}
+html#day[data-color="green"] #loading{
+    background-color: var(--pallet-green-color);
+}
+html#day[data-color="orange"] #loading{
+    background-color: var(--pallet-orange-color);
+}
+html#night #loading{
+    background-color: var(--pallet-blue-color-main);
+}
+html#night[data-color="red"] #loading{
+    background-color: var(--pallet-red-color-main);
+}
+html#night[data-color="green"] #loading{
+    background-color: var(--pallet-green-color-main);
+}
+html#night[data-color="orange"] #loading{
+    background-color: var(--pallet-orange-color-main);
+}
 html#night body.opMenu header #menu .menuBoxes svg rect:last-child {
     transition-delay: 0s;
 }
-html#night #loading {
-    background-color: var(--night-bg);
-}
-
 html#night #loading .loading-text,html#night #loading .loading-text p {
-    color: var(--pallet-blue-color-main);
+    color: var(--white-color);
 }
-
 html#night #loading .loadLine::before {
-    background-color: var(--pallet-blue-color-main);
+    background-color: var(--white-color);
 }
 html#night {
     background-color: var(--night-bg);
@@ -3812,14 +3826,16 @@ html#night header #menu .menuBoxes svg rect{
 html#night header #menu .menuBoxes svg rect {
     stroke: var(--pallet-blue-color-main);
 }
-header .identity svg g path {
-    fill: var(--pallet-blue-color);
+html#day header .identity svg g path {
     transition: all ease-in-out .4s;
+}
+html#day[data-color="blue"] header .identity svg g path{
+    fill: var(--pallet-blue-color);
 }
 html#night header .identity svg g path {
     fill: var(--pallet-blue-color-main);
 }
-html[data-color="blue"] header #menu .menuBoxes svg rect{
+html#day[data-color="blue"] header #menu .menuBoxes svg rect{
     stroke: var(--pallet-blue-color);
 }
 html[data-color="orange"] header #menu .menuBoxes svg rect{
@@ -3842,5 +3858,11 @@ html#night[data-color="red"] header #menu .menuBoxes svg rect{
 }
 html#night[data-color="green"] header #menu .menuBoxes svg rect{
     stroke: var(--pallet-green-color-main);
+}
+html#nigh header #menu .menuBoxes svg rect:last-child {
+    fill: var(--night-bg) !important;
+}
+html#day header #menu .menuBoxes svg rect:last-child {
+    fill: var(--white-color) !important;
 }
 /*---------------------------------------------------colors*/
