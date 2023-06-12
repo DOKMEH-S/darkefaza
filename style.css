@@ -2684,7 +2684,14 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         width: 100%;
         text-align: left;
     }
+    .contactContainer .contact-tabs {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
 
+    main.blogWrapper, main.contactUsWrapper {
+        padding-bottom: 2rem;
+    }
     .aboutCEOWrapper .CEOWrap .ceo-media {
         width: 100%;
     }
@@ -2969,6 +2976,9 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         padding-left: 5vw;
         padding-right: 5vw;
     }
+    main.wrapper {
+        min-height: 80vh;
+    }
     /*==========GENERAL CLASS===========*/
     /*============LOADING==============*/
     #loading .loading-text p {
@@ -3173,6 +3183,11 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         justify-content: space-between;
     }
     /*=========SINGLE PRODUCTS============*/
+    /*=========CONTACT US============*/
+    .contactContainer .contact-tabs {
+        padding-top: 10vh;
+    }
+    /*=========CONTACT US============*/
 }
 @media only screen and (min-width: 769px) and (max-width: 1030px) {
     /*==========ABOUT US===========*/
@@ -3286,6 +3301,23 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         padding: 2rem 0 0;
     }
     /*=============SINGLE PRODUCTS===============*/
+    /*=============CONTACT US===============*/
+    .contactContainer .contact_info .title > *:first-child {
+        font-size: 1.3rem;
+    }
+
+    .contactContainer .contact_info .title > *:last-child {
+        font-size: 2rem;
+    }
+
+    .contactContainer p,.contactContainer a {
+        font-size: .9rem;
+    }
+
+    .contactContainer .contact-tabs .tabs .title {
+        font-size: 1.1rem;
+    }
+    /*=============CONTACT US===============*/
 }
 @media only screen and (min-width: 1401px) and (max-width: 1600px){
     /*=========LOADING============*/
@@ -3389,6 +3421,19 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         width: 4rem;
     }
     /*=============SINGLE PRODUCT===============*/
+    /*=============CONTACT US===============*/
+    .contactContainer .contact_info .title > *:first-child {
+        font-size: 1.6rem;
+    }
+
+    .contactContainer .contact_info .title > *:last-child {
+        font-size: 2rem;
+    }
+
+    .contactContainer .contact-tabs .tabs .title {
+        font-size: 1.15rem;
+    }
+    /*=============CONTACT US===============*/
 }
 /*---------------------------------------------------colors*/
 html[data-color="red"] .cursor2 {
