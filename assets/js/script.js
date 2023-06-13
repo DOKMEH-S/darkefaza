@@ -445,13 +445,12 @@ function ajaxSucses(){
 $(document).ready(function () {
     $('.menuItem').each(function(){
         $(this).click(function (e) {
-            $('.router-overlay').addClass('inSight');
              e.preventDefault();
             var URL = $(this).attr('href');
             setTimeout(function () {
                 window.location = URL;
             },1200);
-            console.log(URL);
+            $('.router-overlay').addClass('inSight');
         })
     });
 })
