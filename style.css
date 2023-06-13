@@ -1623,11 +1623,17 @@ section.projectsContainer .grid-item .projectWrap {
     transition: all ease-in .4s;
 }
 
-section.projectsContainer .projectWrap .projectMedia {
+section.projectsContainer .grid-item .projectWrap .project-title-code {
+    position: relative;
+    display: block;
+}
+section.projectsContainer .grid-item .projectWrap .project-title-code.hover-target span {
+    display: none;
 }
 
 section.projectsContainer .grid-item .projectWrap p.title {
     font-size: 1.1rem;
+    margin: .5rem 0 1rem;
 }
 #filterContainer .box {
     width: 300px;

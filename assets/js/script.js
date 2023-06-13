@@ -331,15 +331,12 @@ function ajaxSucses(){
                     let currentCategory = $(this).attr('data-category');
                     $('.projectWrap').addClass('hide-project-box');
                     $('.projectWrap[data-category="'+currentCategory+'"]').removeClass('hide-project-box');
-                    let currentTitle = $(this).children('span').text();
+                    let currentTitle = $(this).children('.project-title-code').children('span').text();
                     const phrasesCurrentt = [currentTitle];
                     let ell = document.getElementById('textTitle');
                     let fxx = new TextScramble(ell);
                     let counterr = 0;
                     fxx.setText(phrasesCurrentt[counterr])
-                })
-                $(this).mouseleave(function () {
-                    //$('.projectWrap').removeClass('hide-project-box');
                 })
             })
             var isHere = true;
