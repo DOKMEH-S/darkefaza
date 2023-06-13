@@ -445,7 +445,7 @@ function ajaxSucses(){
 $(document).ready(function () {
     $('.menuItem').each(function(){
         $(this).click(function (e) {
-             e.preventDefault();
+            e.preventDefault();
             var URL = $(this).attr('href');
             setTimeout(function () {
                 window.location = URL;
