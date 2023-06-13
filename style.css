@@ -769,6 +769,7 @@ header.bg-effect::before {
     background: rgba(255, 255, 255, 1);
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
+    transition-duration: .2s;
 }
 html#night header.bg-effect::before {
     background: rgba(30, 30, 30, 1);
@@ -781,6 +782,7 @@ header::before {
     height: 100%;
     top: 0;
     z-index: 0;
+    transition: all .5s linear;
 }
 header.noEffect {
     background-color: #fff !important;
