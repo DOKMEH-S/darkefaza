@@ -378,6 +378,8 @@ input[type="number"]{
     -webkit-transition: all 1s cubic-bezier(.77,0,.175,1) 0s;
     -o-transition: all 1s cubic-bezier(.77,0,.175,1) 0s;
     transition: all 1s cubic-bezier(.77,0,.175,1) 0s;
+    justify-content: flex-end;
+    overflow: hidden;
 }
 html.loaded #loading {
     -webkit-transform: translateY(-100%);
@@ -434,6 +436,82 @@ html.loaded #loading {
     -webkit-transform: translateY(100%);
     -ms-transform: translateY(100%);
     transform: translateY(100%);
+}
+.progress {
+    height: 20vh;
+    border-radius: 0;
+    margin-bottom: 0;
+    box-shadow: none;
+    width: 100%;
+}
+
+.progress-rounded {
+    overflow: hidden;
+}
+.progress-bar p:last-child {
+    display: none;
+}
+.progress-bar {
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    border-radius: 0;
+    padding: 10px 0;
+    box-shadow: none;
+    text-align: right;
+    /*20px*/
+    font-weight: 700;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: flex-end; */
+    position: relative;
+}
+html#day .progress-bar{
+    background-color: var(--white-color);
+}
+html#day[data-color="blue"] .progress-bar{
+    color: var(--pallet-blue-color);
+}
+html#day[data-color="green"] .progress-bar{
+    color: var(--pallet-green-color);
+}
+html#day[data-color="orange"] .progress-bar{
+    color: var(--pallet-orange-color);
+}
+html#day[data-color="red"] .progress-bar{
+    color: var(--pallet-red-color);
+}
+html#night[data-color="blue"] .progress-bar{
+    color: var(--pallet-blue-color-main);
+}
+html#night[data-color="green"] .progress-bar{
+    color: var(--pallet-green-color-main);
+}
+html#night[data-color="orange"] .progress-bar{
+    color: var(--pallet-orange-color-main);
+}
+html#night[data-color="red"] .progress-bar{
+    color: var(--pallet-red-color-main);
+}
+html#night .progress-bar{
+    background-color: var(--night-bg);
+}
+.progress-bar p {
+    margin: auto  15px;
+    font-size: 7rem;
+    line-height: 7rem;
+    width: calc(100% - 30px);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.progress-bar.complete {
+}
+
+.progress-1 {
 }
 /*============LOADING==============*/
 /*============NAV & HEADER==============*/

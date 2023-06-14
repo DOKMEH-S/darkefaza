@@ -64,7 +64,10 @@ $(document).ready(function () {
     if($('html').hasClass('firstView') == true){
         setTimeout(function () {
             $('html').addClass('loaded');
-        },2200)
+            setTimeout(function () {
+                initTitle();
+            },500)
+        },3400)
     } else {
         setTimeout(function () {
             $('html').addClass('loaded');
@@ -153,6 +156,26 @@ function initSlogan(){
     });
 }
 /*=========Effect on SLOGAN*/
+/*=========Effect on SLOGAN HOME*/
+let splitTitlee = new SplitText($('section.home-slogan-container .slogan-info h1'),{type: "words, chars, lines", charsClass: "char",wordsClass:"word",linesClass:'line mBox', position: "relative" });
+let splitDatee = new SplitText($('main.homeWrapper section.home-slogan-container .slogan-info p'),{type: "words, chars, lines", charsClass: "char",wordsClass:"word mBox",linesClass:'line', position: "relative" });
+let splitContentt = new SplitText($('main.homeWrapper section.home-about-container .content'),{type: "words, chars, lines", charsClass: "char",wordsClass:"word",linesClass:'line mBox', position: "relative" });
+function initTitle(){
+    let tl2 = gsap.timeline({
+        delay: .02,
+        defaults: {
+            ease: 'power4.out',
+        },
+    });
+    tl2.to( '.mBox', {
+        y: 0,
+        opacity:1,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: 'power4.out',
+    });
+}
+/*=========Effect on SLOGAN HOME*/
 function loadGrid(){
     $('.grid').isotope({
         itemSelector: '.grid-item',
@@ -167,26 +190,26 @@ function ajaxSucses(){
     switch (pageTag){
         case "home":
             if($('html').hasClass('firstView') == true){
-                let splitLoading = new SplitText($('#loading .loading-text p'),{type: "words, chars, lines", charsClass: "char",wordsClass:"word",linesClass:'line', position: "relative" });
-                TweenMax.to("#loading .loading-text p", 0.2, {opacity: 1, ease: "power4.out",delay:0.4});
-                let tl3 = gsap.timeline({
-                    delay: 0.6,
-                    defaults: {
-                        ease: 'power4.out',
-                    },
+                let progressbar = $('.js-progress-bar-search');
+
+                let tween = new TweenLite(progressbar, 2.5, {
+                    width: '100%',
+                    ease: Linear.easeNone,
+                    onUpdate:countPercent,
+                    onComplete: function(){ // progressbar completed
+                        //progressbar.css({"width": "100%"});
+                        progressbar.addClass("complete");
+                        TweenMax.to(".progress", .8, {y: '100%', ease: "power4.out",delay:.2});
+                    }
                 });
-                tl3.to( '#loading .loading-text p .char', {
-                    y: 0,
-                    opacity:1,
-                    duration: 0.5,
-                    stagger: 0.1,
-                    ease: 'power4.out',
-                });
+                function countPercent() {
+                    newPercent = (tween.progress()*100).toFixed();
+                    $('#count').text(newPercent + "%");
+                }
                 setTimeout(function () {
-                    $('html').addClass('loaded');
                     setTimeout(function () {
                         if(!isMobile.any){
-                            initTitle()
+
                         }
                     },500)
                 },2200)
@@ -199,24 +222,6 @@ function ajaxSucses(){
                     },500)
                 },100)
             }
-            let splitTitle = new SplitText($('section.home-slogan-container .slogan-info h1'),{type: "words, chars, lines", charsClass: "char",wordsClass:"word",linesClass:'line mBox', position: "relative" });
-            let splitDate = new SplitText($('main.homeWrapper section.home-slogan-container .slogan-info p'),{type: "words, chars, lines", charsClass: "char",wordsClass:"word mBox",linesClass:'line', position: "relative" });
-            let splitContent = new SplitText($('main.homeWrapper section.home-about-container .content'),{type: "words, chars, lines", charsClass: "char",wordsClass:"word",linesClass:'line mBox', position: "relative" });
-        function initTitle(){
-            let tl2 = gsap.timeline({
-                delay: .02,
-                defaults: {
-                    ease: 'power4.out',
-                },
-            });
-            tl2.to( '.mBox', {
-                y: 0,
-                opacity:1,
-                duration: 0.5,
-                stagger: 0.1,
-                ease: 'power4.out',
-            });
-        }
             break;
         case "aboutUs":
             var widthCEOImg = $('.aboutCEOWrapper .CEOWrap .ceo-media').width();
@@ -440,15 +445,13 @@ function ajaxSucses(){
 
 /*====================Route=====================*/
 $(document).ready(function () {
-    $('.menuItem').each(function(){
-        $(this).click(function (e) {
-            e.preventDefault();
-            var URL = $(this).attr('href');
-            setTimeout(function () {
-                window.location = URL;
-            },1200);
-            $('.router-overlay').addClass('inSight');
-        })
-    });
+    $('.menuItem').click(function (e) {
+        e.preventDefault();
+        $('.router-overlay').addClass('inSight');
+        var URL = $(this).attr('href');
+        setTimeout(function () {
+            window.location = URL;
+        },1200);
+    })
 })
 /*====================Route=====================*/
