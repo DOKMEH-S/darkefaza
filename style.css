@@ -254,13 +254,10 @@ input[type="number"]{
     -webkit-transform-origin: left;
     -ms-transform-origin: left;
     transform-origin: left;
-    -webkit-transition: transform  ease-in-out 1200ms;
+   /* -webkit-transition: transform  ease-in-out 1200ms;
     -o-transition: transform  ease-in-out 1200ms;
     -webkit-transition: -webkit-transform ease-in-out 1200ms;
-    transition: -webkit-transform ease-in-out 1200ms;
-    -o-transition: transform ease-in-out 1200ms;
-    transition: transform ease-in-out 1200ms;
-    transition: transform ease-in-out 1200ms, -webkit-transform ease-in-out 1200ms;
+    transition: -webkit-transform ease-in-out 1200ms;*/
 }
 .router-overlay.inSight{
     -webkit-transform: scaleX(1);
@@ -4288,16 +4285,16 @@ body.opMenu header #menu .menuBoxes svg rect:last-child body.opMenu header #menu
     -o-transition-delay: .2s;
     transition-delay: .2s;
 }
-html#day[data-color="orange"] .router-overlay-first{
+html[data-color="orange"] .router-overlay-first{
     background-color: var(--pallet-orange-color);
 }
-html#day[data-color="red"] .router-overlay-first{
+html[data-color="red"] .router-overlay-first{
     background-color: var(--pallet-red-color);
 }
-html#day[data-color="green"] .router-overlay-first{
+html[data-color="green"] .router-overlay-first{
     background-color: var(--pallet-green-color);
 }
-html#day[data-color="blue"] .router-overlay-first{
+html[data-color="blue"] .router-overlay-first{
     background-color: var(--pallet-blue-color);
 }
 html#day[data-color="orange"] .router-overlay{

@@ -71,7 +71,7 @@ $(document).ready(function () {
     } else {
         setTimeout(function () {
             $('html').addClass('loaded');
-            TweenMax.to(".router-overlay-first", 1.2, {scaleX: '0', ease: "power1.out"});
+            TweenMax.to(".router-overlay-first", 1.2, {scaleX: '0', ease: "power4.out"});
             setTimeout(function () {
                 if(!isMobile.any){
                     initSlogan();
@@ -445,13 +445,14 @@ function ajaxSucses(){
 
 /*====================Route=====================*/
 $(document).ready(function () {
-    $('.menuItem').click(function (e) {
-        e.preventDefault();
-        $('.router-overlay').addClass('inSight');
+    $('.menuItem').click(function (event) {
+        event.preventDefault();
         var URL = $(this).attr('href');
+        TweenMax.to(".router-overlay", 1.2, {scaleX: '1', ease: "power4.out"});
         setTimeout(function () {
             window.location = URL;
         },1200);
+        //$('.router-overlay').addClass('inSight');
     })
 })
 /*====================Route=====================*/
