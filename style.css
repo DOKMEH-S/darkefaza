@@ -4445,10 +4445,10 @@ html#night[data-color="red"] header #menu .menuBoxes svg rect{
 html#night[data-color="green"] header #menu .menuBoxes svg rect{
     stroke: var(--pallet-green-color-main);
 }
-html#nigh header #menu .menuBoxes svg rect:last-child {
+html#nigh header #menu .menuBoxes svg rect {
     fill: var(--night-bg) !important;
 }
-html#day header #menu .menuBoxes svg rect:last-child {
+html#day header #menu .menuBoxes svg rect {
     fill: var(--white-color) !important;
 }
 /*---------------------------------------------------colors*/

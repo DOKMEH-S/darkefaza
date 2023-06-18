@@ -157,7 +157,7 @@ function initSlogan(){
 }
 /*=========Effect on SLOGAN*/
 /*=========Effect on SLOGAN HOME*/
-let splitTitlee = new SplitText($('section.home-slogan-container .slogan-info h1'),{type: "words, chars, lines", charsClass: "char",wordsClass:"word",linesClass:'line mBox', position: "relative" });
+let splitTitlee = new SplitText($('section.home-slogan-container .slogan-info h1'),{type: "words, chars", charsClass: "char",wordsClass:"word mBox", position: "relative" });
 let splitDatee = new SplitText($('main.homeWrapper section.home-slogan-container .slogan-info p'),{type: "words, chars, lines", charsClass: "char",wordsClass:"word mBox",linesClass:'line', position: "relative" });
 let splitContentt = new SplitText($('main.homeWrapper section.home-about-container .content'),{type: "words, chars, lines", charsClass: "char",wordsClass:"word",linesClass:'line mBox', position: "relative" });
 function initTitle(){
