@@ -63,7 +63,7 @@ $(document).ready(function () {
     ajaxSucses();
     if($('html').hasClass('firstView') == true){
         setTimeout(function () {
-            //$('html').addClass('loaded');
+            $('html').addClass('loaded');
             setTimeout(function () {
                 initTitle();
             },500)
@@ -199,7 +199,7 @@ function ajaxSucses(){
                     onComplete: function(){ // progressbar completed
                         //progressbar.css({"width": "100%"});
                         progressbar.addClass("complete");
-                        //TweenMax.to(".progress", .8, {y: '100%', ease: "power4.out",delay:.2});
+                        TweenMax.to(".progress", .8, {y: '100%', ease: "power4.out",delay:.2});
                     }
                 });
                 function countPercent() {
