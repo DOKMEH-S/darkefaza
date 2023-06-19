@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd64eec6-06b2-45e7-8a60-3cf8f1b2c68d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/qube.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/qube.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index-after-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/index-after-view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single-blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/single-blog.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +54,7 @@
       <workItem from="1687073369457" duration="1576000" />
       <workItem from="1687076355038" duration="2651000" />
       <workItem from="1687083106519" duration="15306000" />
-      <workItem from="1687154869225" duration="9836000" />
+      <workItem from="1687154869225" duration="9923000" />
     </task>
     <servers />
   </component>
