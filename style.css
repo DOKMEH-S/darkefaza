@@ -16,6 +16,10 @@ html,body,p,span,a,ul li,ol li,textarea,input{
 }
 h1,h2,h3,h4,h5,h6{
     font-family: 'IBM Plex Mono', monospace;
+    margin-top: 0;
+}
+p{
+    margin-top: 0;
 }
 /*================FONTS===============*/
 /*============GENERAL CLASS==============*/
@@ -1206,7 +1210,7 @@ section.aboutContainer {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    padding-top: 20rem;
+    padding-top: .0;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
@@ -1215,10 +1219,12 @@ section.aboutContainer .info-wrap {
     width: 35%;
 }
 section.aboutContainer .element-wrap {
-    height: 60vh;
+    height: 100vh;
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    display:
+            -webkit-box;
+    display:
+            -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -1446,7 +1452,7 @@ section.aboutMemberContainer .membersWrapper {
 }
 
 section.aboutMemberContainer .membersWrapper .memberCard {
-    width: calc(100%/3);
+    width: calc(100%/8);
 }
 .memberCard::before, .memberCard::after {
     content: "";
@@ -1512,9 +1518,20 @@ html#night .memberCard{
 }
 .memberCard .text {
     position: absolute;
-    inset: 20px;
-    top: auto;
     z-index: 2;
+    bottom: 15px;
+    left: 15px;
+}
+.memberCard .text h3 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-size: 1.1rem;
+}
+
+.memberCard .text p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: .85rem;
 }
 .memberCard h3 .char,
 .memberCard p .word {
@@ -1557,6 +1574,70 @@ main.projectsWrapper {
     padding-left: 5vw;
     padding-right: 5vw;
     padding-bottom: 6rem;
+    /*min-height: calc(100vh - var(--height-header) * 2);*/
+}
+.progressLoading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    background-color: var(--white-color);
+    transition: all ease-in-out .4s;
+}
+.progress-container-loading {
+    transform: translateY(-50%);
+    top: 50%;
+    position: absolute;
+    width: 100%;
+    padding: 0 100px;
+    text-align: center;
+}
+
+.progress-container-loading label {
+    font-size: 20px;
+    opacity: 0;
+    display:inline-block;
+    color: var(--blue-color);
+}
+
+@keyframes anim {
+    0% {
+        opacity: 0;
+        transform: translateX(-300px);
+    }
+    33% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    66% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(300px);
+    }
+}
+
+@-webkit-keyframes anim {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-300px);
+    }
+    33% {
+        opacity: 1;
+        -webkit-transform: translateX(0px);
+    }
+    66% {
+        opacity: 1;
+        -webkit-transform: translateX(0px);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateX(300px);
+    }
 }
 #filter img {
     height: 1.6rem;
@@ -1611,6 +1692,15 @@ section.projectsContainer .projectWrap .projectMedia img {
 }
 #filter img {
     height: 1.6rem;
+}
+html.loadIsotope .progressLoading {
+    opacity: 0;
+    pointer-events: none;
+}
+
+html.loadIsotope section.projectsContainer {
+    opacity: 1;
+    transform: translateY(0);
 }
 html.fixed #filter {height: 8vh;}
 section.projectsContainer .grid-item .projectWrap .projectMediaOverlayBoxWrap .plus-box {
@@ -1971,7 +2061,9 @@ html.op-filter #body-overlay {
 }
 header.projectHeader .identity-text-title-wrap.moving {
     padding-left: 1rem;
-    pointer-events:none
+    pointer-events:none;
+    height: auto;
+    padding-top: .5rem;
 }
 
 header.projectHeader .identity-text-title-wrap.moving .identity svg {
@@ -2724,6 +2816,9 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         padding-left: 20px;
         padding-right: 20px;
     }
+    body.opMenu {
+        overflow: hidden;
+    }
     /*==========GENERAL CLASS=============*/
     /*==========LOADING=============*/
     #loading .loading-text p {
@@ -2737,7 +2832,9 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         font-size: 3rem;
         line-height: 3rem;
     }
-
+    #loading {
+        height: calc(var(--vh, 1vh) * 100);
+    }
     .progress {
         height: 15vh;
     }
@@ -2943,6 +3040,7 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         -ms-flex-align: center;
         align-items: center;
         padding-bottom: 50px;
+        height: calc(var(--vh, 1vh) * 100);
     }
     /*==========NAV & HEADER=============*/
     /*==========HOME=============*/
@@ -2988,20 +3086,21 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     /*==========HOME=============*/
     /*==========ABOUT=============*/
     section.aboutContainer {
-        padding-top: 10vh;
+        padding-top: 14vh;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
         -webkit-box-orient: vertical;
         -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
         flex-direction: column-reverse;
+        margin-bottom: 3rem;
     }
     section.aboutContainer .info-wrap {
         width: 100%;
     }
     section.aboutContainer .element-wrap {
         width: 100%;
-        height: 26vh;
+        height: auto;
     }
     section.aboutContainer .element-wrap .logo {
         height: 100%;
@@ -3027,12 +3126,13 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
 
     main.aboutUsWrapper h1,main.aboutUsWrapper h2 {
         margin-top: 0;
+        margin-bottom: 1.5rem;
     }
 
     section.aboutAwardsContainer .awards-wrapper .awards-wrap {
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-        row-gap: .5rem;
+        row-gap: 10px;
         -webkit-box-pack: start;
         -ms-flex-pack: start;
         justify-content: flex-start;
@@ -3040,7 +3140,9 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
-        width: 100%;
+        width: calc(50% - 10px);
+        text-align: center;
+        margin: 0;
     }
 
     section.aboutAwardsContainer .awards-wrapper .awards-wrap .awards-title {
@@ -3048,7 +3150,14 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         -ms-flex: unset;
         flex: unset;
     }
+    section.aboutAwardsContainer .awards-wrapper .awards-wrap .award-media {
+        width: 3rem;
+        height: 3rem;
+    }
 
+    section.aboutAwardsContainer .awards-wrapper .awards-wrap a,section.aboutAwardsContainer .awards-wrapper .awards-wrap p {
+        font-size: 12px;
+    }
     section.aboutAwardsContainer .awards-wrapper {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -3058,27 +3167,40 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         -webkit-column-gap: 20px;
         -moz-column-gap: 20px;
         column-gap: 20px;
+        row-gap: 30px;
     }
 
     section.aboutAwardsContainer {
-        padding-bottom: 5rem;
+        padding-bottom: 3rem;
+    }
+    .memberCard .text {
+        bottom: 10px;
+        left: 10px;
     }
 
+    .memberCard .text h3 {
+        font-size: 14px;
+    }
+
+    .memberCard .text p {
+        font-size: 12px;
+    }
     section.aboutMemberContainer .membersWrapper .memberCard {
-        width: 100%;
+        width: 50%;
     }
 
     section.aboutMemberContainer {
         padding-bottom: 4rem;
     }
     section.aboutMissionVisionContainer {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        padding-top: 0;
+        padding-bottom: 3rem;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     }
     section.aboutMissionVisionContainer .missionVisionWrap {
         width: 100%;
+        margin-bottom: 3rem;
     }
     .aboutCEOWrapper .CEOWrap {
         -ms-flex-wrap: wrap;
@@ -3087,6 +3209,7 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     .aboutCEOWrapper .CEOWrap .ceo-info {
         width: 100%;
         text-align: left;
+        margin-bottom: 2rem;
     }
     .contactContainer .contact-tabs {
         padding-top: 0;
@@ -3100,12 +3223,28 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         width: 100%;
     }
     .aboutCEOWrapper {
-        padding-bottom: 4rem;
+        padding-bottom: 3rem;
+    }
+    section.aboutContainer .info-wrap p {
+        margin: 0;
+    }
+
+    main.aboutUsWrapper .content p,main.aboutUsWrapper p {
+        margin: 0;
+    }
+
+    section.aboutMissionVisionContainer .missionVisionWrap:last-child {
+        margin: 0;
+    }
+
+    .aboutCEOWrapper .CEOWrap:nth-of-type(even) {
+        padding-top: 3rem;
     }
     .memberCard > img {
         -webkit-transition: all ease-in-out 0.5s;
         -o-transition: all ease-in-out 0.5s;
         transition: all ease-in-out 0.5s;
+        height: 100%;
     }
     /*==========ABOUT=============*/
     /*==========CONTACT=============*/
@@ -3587,6 +3726,9 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     section.aboutContainer {
         padding-top: 18rem;
     }
+    section.aboutMemberContainer .membersWrapper .memberCard{
+        width: calc(100%/5);
+    }
     section.aboutContainer .element-wrap {
         height: auto;
     }
@@ -3753,11 +3895,17 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     /*=============HOME===============*/
     /*=============ABOUT===============*/
     section.aboutContainer {
-        padding-top: 8rem;
+        padding-top: 0;
+    }
+    .memberCard .text h3 {
+        font-size: 1rem;
     }
 
-    section.aboutContainer .element-wrap {
-        height: 45vh;
+    .memberCard .text p {
+        font-size: .8rem;
+    }
+    section.aboutMemberContainer .membersWrapper .memberCard{
+        width: calc(100%/6);
     }
 
     section.aboutMissionVisionContainer {
@@ -3880,14 +4028,13 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     /*=============HOME===============*/
     /*=============ABOUT===============*/
     section.aboutContainer {
-        padding-top: 10rem;
     }
     section.aboutMissionVisionContainer {
         padding-top: 6rem;
         padding-bottom: 6rem;
     }
-    section.aboutContainer .element-wrap {
-        height: 55vh;
+    section.aboutMemberContainer .membersWrapper .memberCard{
+        width: calc(100%/6);
     }
 
     .aboutCEOWrapper {
@@ -3897,7 +4044,13 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     section.aboutAwardsContainer {
         padding-bottom: 6rem;
     }
+    .memberCard .text h3 {
+        font-size: 1rem;
+    }
 
+    .memberCard .text p {
+        font-size: .8rem;
+    }
     section.aboutMemberContainer {
         padding-bottom: 7rem;
     }
@@ -4365,6 +4518,36 @@ html#night[data-color="green"] .router-overlay{
 }
 html#night[data-color="blue"] .router-overlay{
     background-color: var(--pallet-blue-color-main);
+}
+html[data-color="blue"] .progress-container-loading label {
+    color: var(--pallet-blue-color);
+}
+html[data-color="green"] .progress-container-loading label {
+    color: var(--pallet-green-color);
+}
+html[data-color="red"] .progress-container-loading label {
+    color: var(--pallet-red-color);
+}
+html[data-color="orange"] .progress-container-loading label {
+    color: var(--pallet-orange-color);
+}
+html#day .progressLoading{
+    background-color: var(--white-color);
+}
+html#night .progressLoading{
+    background-color: var(--night-bg);
+}
+html#night[data-color="blue"] .progress-container-loading label {
+    color: var(--pallet-blue-color-main);
+}
+html#night[data-color="green"] .progress-container-loading label {
+    color: var(--pallet-green-color-main);
+}
+html#night[data-color="red"] .progress-container-loading label {
+    color: var(--pallet-red-color-main);
+}
+html#night[data-color="orange"] .progress-container-loading label {
+    color: var(--pallet-orange-color-main);
 }
 html#day[data-color="blue"] #loading{
     background-color: var(--pallet-blue-color);

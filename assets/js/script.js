@@ -185,6 +185,10 @@ function loadGrid(){
             horizontalOrder: true
         }
     });
+    $('html').addClass('loadIsotope');
+    setTimeout(function () {
+        $('section.projectsContainer').css('pointer-events','auto');
+    },1500)
 }
 function ajaxSucses(){
     switch (pageTag){
@@ -256,9 +260,16 @@ function ajaxSucses(){
         case "projects":
             $('header').addClass('projectHeader');
             setTimeout(function () {
-                $('section.projectsContainer').css('pointer-events','auto');
                 loadTextScramble()
             },2000)
+
+            var inputs = $(".progress-container-loading").find($("label") );
+            for(var i =0 ; i< inputs.length; i ++) {
+                var index = i +1;
+                var time = ((inputs.length)-i ) * 100;
+                $(".progress-container-loading label:nth-child("+ index+")").css( "-webkit-animation", "anim 3s "+time+"ms infinite ease-in-out" );
+                $(".progress-container-loading label:nth-child("+index+")").css( "-animation", "anim 3s "+time+"ms infinite ease-in-out" );
+            }
             // ——————————————————————————————————————————————————
             // TextScramble
             // ——————————————————————————————————————————————————
@@ -329,6 +340,45 @@ function ajaxSucses(){
             // ——————————————————————————————————————————————————
             // Example
             // ——————————————————————————————————————————————————
+            var isScroll = true;
+            function showProjectName(){
+                $('section.projectsContainer .grid-item .projectWrap').on('mouseover',function () {
+                    let element = $(this),
+                        projectName = $('header.projectHeader .identity-text-title-wrap'),
+                        projectNameWidth = projectName.width(),
+                        currentWidth = element.width(),
+                        windowsWidth = $('section.projectsContainer').width(),
+                        elementTop = element.offset().top,
+                        elementLeft = element.offset().left,
+                        finalCorX = currentWidth + elementLeft,
+                        paddingX = parseInt($('main.projectsWrapper').css('paddingRight')),
+                        distanceToRight = windowsWidth - paddingX,
+                        windowsScrollTop = $(window).scrollTop(),
+                        finalCorY = elementTop - windowsScrollTop;
+                    setTimeout(function () {
+                        projectNameWidth = projectName.width();
+                        return projectNameWidth;
+                    },100)
+                    /*if(isScroll) {
+                        finalCorY = elementTop - scrollTopY;
+                    } else {
+                        finalCorY = elementTop - scrollTopY;
+                    }*/
+
+                    if(distanceToRight > finalCorX){
+                        projectName.css({
+                            'left':finalCorX,
+                            'top':finalCorY
+                        })
+                    } else if (distanceToRight < finalCorX) {
+                        projectName.css({
+                            'left':finalCorX - currentWidth - projectNameWidth - 40,
+                            'top':finalCorY
+                        })
+                    }
+                    projectName.addClass('moving');
+                });
+            }
             $('section.projectsContainer .projectWrap').each(function () {
                 var backColor = $(this).attr('data-color');
                 $(this).children('.projectMediaOverlayBoxWrap').children('.projectOverlayWrap').css('backgroundColor',backColor);
@@ -345,42 +395,17 @@ function ajaxSucses(){
                 })
             })
             var isHere = true;
+            console.log(isScroll);
             $('section.projectsContainer').mousemove(function () {
                 isHere= true;
                 if(isHere){
-                    $('section.projectsContainer .grid-item .projectWrap').on('mouseover',function () {
-                        let element = $(this),
-                            projectName = $('header.projectHeader .identity-text-title-wrap'),
-                            projectNameWidth = projectName.width(),
-                            currentWidth = element.width(),
-                            windowsWidth = $('section.projectsContainer').width(),
-                            elementTop = element.offset().top,
-                            elementLeft = element.offset().left,
-                            finalCorX = currentWidth + elementLeft,
-                            finalCorY = elementTop,
-                            paddingX = parseInt($('main.projectsWrapper').css('paddingRight')),
-                            distanceToRight = windowsWidth - paddingX;
-                            setTimeout(function () {
-                                projectNameWidth = projectName.width();
-                                return projectNameWidth;
-                            },100)
-                        if(distanceToRight > finalCorX){
-                            projectName.css({
-                                'left':finalCorX,
-                                'top':finalCorY
-                            })
-                        } else if (distanceToRight < finalCorX) {
-                            projectName.css({
-                                'left':finalCorX - currentWidth - projectNameWidth - 40,
-                                'top':finalCorY
-                            })
-                        }
-                        projectName.addClass('moving');
-                    });
+                    isScroll = false;
+                   showProjectName(0);
                 }
             })
             $('section.projectsContainer').mouseleave(function () {
                 isHere = false;
+                isScroll = true;
                 $('.projectWrap').removeClass('hide-project-box');
                 let phrasessss = ['I am a very smart assist here for you'];
                 let elll = document.getElementById('textTitle');
@@ -395,7 +420,16 @@ function ajaxSucses(){
                 })
                 projectName.removeClass('moving');
             })
-
+            $(window).scroll(function () {
+                var scrollT = $(window).scrollTop();
+                if(scrollT > 0 ) {
+                    isScroll = true;
+                    showProjectName();
+                } else {
+                    isScroll = false;
+                    showProjectName();
+                }
+            });
             $('section.projectsContainer .grid-item .projectWrap .projectMediaOverlayBoxWrap .projectOverlayWrap').each(function () {
                 let currentHeight = $(this).siblings('.projectMedia').children().height();
                 $(this).css('height',currentHeight);

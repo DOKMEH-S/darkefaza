@@ -23,7 +23,7 @@ window.onload = function () {
         constructor(x,y){
             this.x = x;
             this.y = y;
-            this.shown = false;
+            this.shown = true;
         }
         update(x,y){
             this.x = x;
@@ -31,12 +31,12 @@ window.onload = function () {
         }
         show(color,size,line_thickness){
             if(!this.shown){
-                //c.fillStyle=color;
-                //c.fillRect(this.x-size/2,this.y-size/2,size,size);
+                c.fillStyle=color;
+                c.fillRect(this.x-size/2,this.y-size/2,size,size);
 
                 c.fillStyle=color;
                 c.beginPath();
-                c.arc(this.x,this.y,size/2,0,2*Math.PI);
+                c.arc(this.x,this.y,size/10,0,2*Math.PI);
                 c.lineWidth=line_thickness;
                 c.fill();
 
@@ -66,11 +66,11 @@ window.onload = function () {
                 c.lineWidth=line_thickness;
                 c.stroke();
 
-                this.shown = true;
+                this.shown = false;
             }
         }
         cleanup(){
-            this.shown = false;
+            this.shown = true;
         }
     }
     class triangle{
@@ -188,12 +188,12 @@ window.onload = function () {
             this.t7 = new triangle(this.sn[0],this.sn[1],this.sn[2]);
             //which triangles to iterate and ho many iterations
             if(it < 3){
-                //this.t1.iterate(it+1);
-                //this.t2.iterate(it+1);
-                //this.t3.iterate(it+1);
-                this.t4.iterate(it+1);
-                this.t5.iterate(it+1);
-                this.t6.iterate(it+1);
+                this.t1.iterate(it+1);
+                this.t2.iterate(it+1);
+                this.t3.iterate(it+1);
+                //this.t4.iterate(it+1);
+                //this.t5.iterate(it+1);
+                //this.t6.iterate(it+1);
                 //this.t7.iterate(it+1);
             }
             //show next iterations
@@ -275,8 +275,8 @@ window.onload = function () {
     let pts = [],
         mouse_pt = new point(mouse.x,mouse.y),
         tris = [],
-        num = 8,
-        r = h/3;
+        num = 4,
+        r = h/2;
 
     for(let i = 0, len = num; i < len; i++){
         pts.push(new point(w/2+r*Math.cos(i*2*Math.PI/len),h/2+r*Math.sin(i*2*Math.PI/len)));
