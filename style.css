@@ -2067,7 +2067,7 @@ header.projectHeader .identity-text-title-wrap.moving {
 }
 
 header.projectHeader .identity-text-title-wrap.moving .identity svg {
-    height: 4rem;
+    height: 4.5rem;
 }
 header.projectHeader .identity-text-title-wrap.moving #textTitle {
     margin-left: 1rem;
@@ -3428,8 +3428,9 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     .grid-item, .grid-sizer {
         width: 100%;
     }
-    #textTitle {
-        display: none;
+    header.projectHeader .identity-text-title-wrap.moving #textTitle {
+        margin-left: .5rem;
+        font-size: .85rem;
     }
     section.projectsContainer .grid-item .projectWrap .projectMediaOverlayBoxWrap .projectOverlayWrap {
         opacity: .55 !important;
@@ -3438,11 +3439,23 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         transform: translateX(-100%);
         pointer-events: none;
     }
-
+    #textTitle {
+        margin-left: .5rem;
+        font-size: .85rem;
+    }
     section.projectsContainer .grid-item .projectWrap .projectMediaOverlayBoxWrap {
         overflow: hidden;
     }
+    header.projectHeader .identity-text-title-wrap {
+        height: 10vh;
+        padding-left: 20px;
+        width: 71%;
+    }
 
+    header.projectHeader #menu {
+        right: 20px;
+        height: 10vh;
+    }
     section.projectsContainer .grid-item .projectWrap:hover .projectMediaOverlayBoxWrap .projectOverlayWrap {
         -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
@@ -3453,7 +3466,7 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         opacity: 1;
     }
 
-    header.projectHeader .identity-text-title-wrap.moving {left: auto !important;top: auto !important;}
+    header.projectHeader .identity-text-title-wrap.moving {left: auto !important;top: auto !important;padding-top: 0;padding-left: 20px;}
 
     header.projectHeader .identity-text-title-wrap.moving .identity svg {
         height: 7vh;
@@ -3570,6 +3583,11 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         width: 50%;
     }
     /*=============ABOUT================*/
+    /*=============PROJECTS================*/
+    .grid-item, .grid-sizer{
+        width: 50%;
+    }
+    /*=============PROJECTS================*/
 }
 @media only screen and (min-width: 769px) and (max-width: 1199px){
     /*==========GENERAL CLASS===========*/
@@ -3822,6 +3840,48 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         justify-content: space-between;
     }
     /*=========SINGLE PRODUCTS============*/
+    /*=========PROJECTS & ARTS============*/
+    header.projectHeader .identity-text-title-wrap {
+        height: 9vh !important;
+        top: 0 !important;
+        left: 0 !important;
+        padding-left: 5vw !important;
+        padding-top: 0 !important;
+    }
+    section.projectsContainer .grid-item .projectWrap.hide-project-box {
+        opacity: 1;
+    }
+    header.projectHeader #menu {
+        height: 9vh;
+    }
+    main.projectsWrapper {
+        padding-top: 9vh;
+    }
+    .grid-item, .grid-sizer {
+        width: calc(100%/4);
+    }
+    section.projectsContainer .grid-item .projectWrap .projectMediaOverlayBoxWrap .projectOverlayWrap {
+        opacity: .55;
+        pointer-events: none;
+        transform: translateX(-100%);
+    }
+
+    section.projectsContainer .grid-item .projectWrap .project-title-code {
+        pointer-events: none;
+    }
+
+    section.projectsContainer .grid-item .projectWrap .projectMediaOverlayBoxWrap {
+        overflow: hidden;
+    }
+
+    section.projectsContainer .grid-item .projectWrap:hover .projectMediaOverlayBoxWrap .projectOverlayWrap {
+        transform: translateX(0);
+    }
+
+    section.projectsContainer .grid-item .projectWrap:hover .project-title-code {
+        pointer-events: auto;
+    }
+    /*=========PROJECTS & ARTS============*/
     /*=========CONTACT US============*/
     .contactContainer .contact-tabs {
         padding-top: 10vh;
@@ -3969,6 +4029,14 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         font-size: 1.1rem;
     }
     /*=============CONTACT US===============*/
+    /*=============PROJECT & ART===============*/
+    .grid-item, .grid-sizer {
+        width: calc(100%/7);
+    }
+    header.projectHeader .identity-text-title-wrap.moving .identity svg {
+        height: 8vh;
+    }
+    /*=============PROJECT & ART===============*/
 }
 @media only screen and (min-width: 1401px) and (max-width: 1600px){
     /*=========LOADING============*/
@@ -4094,6 +4162,11 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         font-size: 1.15rem;
     }
     /*=============CONTACT US===============*/
+    /*=============PROJECTS & ART===============*/
+    header.projectHeader .identity-text-title-wrap.moving .identity svg {
+        height: 8vh;
+    }
+    /*=============PROJECTS & ART===============*/
 }
 /*---------------------------------------------------colors*/
 html[data-color="red"] .cursor2 {
