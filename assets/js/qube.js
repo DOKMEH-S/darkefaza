@@ -1,4 +1,115 @@
 window.onload = function () {
+    let currentColor = '',
+        backColor = '',
+        reverseBackColor = '',
+        colorPickHtml = $('html').attr('data-color'),
+        checkTime = $('html').attr('id');
+    if(checkTime === 'day'){
+        currentColor = '#3354FF';
+        switch (colorPickHtml) {
+            case "red":
+                currentColor = '#B22D2D';
+                backColor = '#ffffff';
+                reverseBackColor = '#1E1E1E';
+                break;
+            case "blue":
+                currentColor = '#3354FF';
+                backColor = '#ffffff';
+                reverseBackColor = '#1E1E1E';
+                break;
+            case "green":
+                currentColor = '#006039';
+                backColor = '#ffffff';
+                reverseBackColor = '#1E1E1E';
+                break;
+            case "orange":
+                currentColor = '#FA6705';
+                backColor = '#ffffff';
+                reverseBackColor = '#1E1E1E';
+                break;
+
+        }
+    } else if (checkTime === 'night'){
+        currentColor = '#99AAFF';
+        switch (colorPickHtml) {
+            case "red":
+                currentColor = '#DA6C6C';
+                backColor = '#1E1E1E';
+                reverseBackColor = '#ffffff';
+                break;
+            case "blue":
+                currentColor = '#99AAFF';
+                backColor = '#1E1E1E';
+                reverseBackColor = '#ffffff';
+                break;
+            case "green":
+                currentColor = '#29CC8A';
+                backColor = '#1E1E1E';
+                reverseBackColor = '#ffffff';
+                break;
+            case "orange":
+                currentColor = '#FCAA73';
+                backColor = '#1E1E1E';
+                reverseBackColor = '#ffffff';
+                break;
+
+        }
+    }
+
+    $('.colorPallet-item').click(function () {
+        let colorPick = $(this).attr('data-color');
+        if(checkTime === 'day') {
+            switch (colorPick) {
+                case "red":
+                    currentColor = '#DA6C6C';
+                    backColor = '#ffffff';
+                    reverseBackColor = '#1E1E1E';
+                    break;
+                case "blue":
+                    currentColor = '#3354FF';
+                    backColor = '#ffffff';
+                    reverseBackColor = '#1E1E1E';
+                    break;
+                case "green":
+                    currentColor = '#006039';
+                    backColor = '#ffffff';
+                    reverseBackColor = '#1E1E1E';
+                    break;
+                case "orange":
+                    currentColor = '#FA6705';
+                    backColor = '#ffffff';
+                    reverseBackColor = '#1E1E1E';
+                    break;
+
+            }
+        } else if (checkTime === 'night'){
+            switch (colorPick) {
+                case "red":
+                    currentColor = '#DA6C6C';
+                    backColor = '#1E1E1E';
+                    reverseBackColor = '#ffffff';
+                    break;
+                case "blue":
+                    currentColor = '#99AAFF';
+                    backColor = '#1E1E1E';
+                    reverseBackColor = '#ffffff';
+                    break;
+                case "green":
+                    currentColor = '#29CC8A';
+                    backColor = '#1E1E1E';
+                    reverseBackColor = '#ffffff';
+                    break;
+                case "orange":
+                    currentColor = '#FCAA73';
+                    backColor = '#1E1E1E';
+                    reverseBackColor = '#ffffff';
+                    break;
+
+            }
+        }
+        console.log(currentColor);
+    })
+
     let ctx = document.getElementById("C"),
         c = ctx.getContext("2d"),
         w,
@@ -205,47 +316,47 @@ window.onload = function () {
             this.t6.show(1,1,1,1);
             //this.t7.show(0,0,1,1);
         }
-        show_main_edges(){
-            this.ab.show("white",0.1);
-            this.bc.show("white",0.1);
-            this.ca.show("white",0.1);
+        show_main_edges(color){
+            this.ab.show(color,0.1);
+            this.bc.show(color,0.1);
+            this.ca.show(color,0.1);
         }
-        show_other_edges(){
+        show_other_edges(color){
             for(let i = 0; i < 3; i++){
-                this.asn[i].show("#000000",0.1);
+                this.asn[i].show(color,0.1);
                 this.bsn[i].show("#000000",0.1);
-                this.csn[i].show("#000000",0.1);
+                this.csn[i].show(color,0.1);
                 this.ssn[i].show("#000000",0.1);
-                this.snn[i].show("#000000",0.1);
+                this.snn[i].show(color,0.1);
             }
-            this.as.show("#00FFFF",0.1);
-            this.bs.show("#00FFFF",0.1);
-            this.cs.show("#00FFFF",0.1);
+            this.as.show(color,0.1);
+            this.bs.show(color,0.1);
+            this.cs.show(color,0.1);
         }
-        show_main_points(){
-            this.a.show("white",3,1);
-            this.b.show("white",3,1);
-            this.c.show("white",3,1);
+        show_main_points(color){
+            this.a.show(color,3,1);
+            this.b.show(color,3,1);
+            this.c.show(color,3,1);
         }
-        show_other_points(){
-            this.s.show("#00FFFF",2,1);
+        show_other_points(color){
+            this.s.show(color,2,1);
 
             for(let i = 0; i < 3; i++){
-                this.sn[i].show("#0000FF",1,1);
+                this.sn[i].show(color,1,1);
             }
         }
         show(em,eo,pm,po){
             if(em){
-                this.show_main_edges();
+                this.show_main_edges(backColor);
             }
             if(eo){
-                this.show_other_edges();
+                this.show_other_edges(currentColor);
             }
             if(pm){
-                this.show_main_points();
+                this.show_main_points(reverseBackColor);
             }
             if(po){
-                this.show_other_points();
+                this.show_other_points(currentColor);
             }
         }
         cleanup(){
