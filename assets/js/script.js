@@ -193,6 +193,10 @@ function loadGrid(){
 function ajaxSucses(){
     switch (pageTag){
         case "home":
+            $('header').addClass('homeHeader');
+            if(isMobile.phone){
+
+            }
             if($('html').hasClass('firstView') == true){
                 let progressbar = $('.js-progress-bar-search');
 

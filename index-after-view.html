@@ -104,6 +104,10 @@
             <section class="home-slogan-container">
                 <div class="slogan-overlay">
                     <canvas id="C"></canvas>
+                    <video loop muted autoplay playsinline preload="metadata" id="sloganVideo">
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
                 <div class="slogan-info">
                     <h1>Mahyar/Jason Long and Lovett Celebrate Major Construction Milestones with Public Opening of POST Houston</h1>
@@ -147,6 +151,19 @@
     }
     document.addEventListener("DOMContentLoaded", ready);
     $(document).ready(function () {
+        let dayVideoUrl = "./assets/video/home-day.mp4",
+            nightVideoUrl = "./assets/video/home-night.mp4",
+            video = document.getElementById('sloganVideo'),
+            currentTime = $('html').attr('id');
+        if(currentTime === 'day'){
+            $('#sloganVideo source').attr('src',dayVideoUrl);
+            video.load();
+            video.play()
+        } else if (currentTime === 'night'){
+            $('#sloganVideo source').attr('src',nightVideoUrl);
+            video.load();
+            video.play()
+        }
         setTimeout(function () {
             document.querySelector('.router-overlay').style.opacity = '1';
             document.getElementById('menu-container').style.opacity = '1';

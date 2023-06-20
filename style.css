@@ -1149,6 +1149,7 @@ main.homeWrapper section.home-slogan-container .slogan-overlay img,main.homeWrap
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover;
+    display: none;
 }
 main.homeWrapper section.home-slogan-container .slogan-overlay::before {
     content: '';
@@ -1585,9 +1586,13 @@ main.projectsWrapper {
     width: 100%;
     z-index: 10;
     background-color: var(--white-color);
+    -webkit-transition: all ease-in-out .4s;
+    -o-transition: all ease-in-out .4s;
     transition: all ease-in-out .4s;
 }
 .progress-container-loading {
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     top: 50%;
     position: absolute;
@@ -1605,18 +1610,22 @@ main.projectsWrapper {
 @keyframes anim {
     0% {
         opacity: 0;
+        -webkit-transform: translateX(-300px);
         transform: translateX(-300px);
     }
     33% {
         opacity: 1;
+        -webkit-transform: translateX(0px);
         transform: translateX(0px);
     }
     66% {
         opacity: 1;
+        -webkit-transform: translateX(0px);
         transform: translateX(0px);
     }
     100% {
         opacity: 0;
+        -webkit-transform: translateX(300px);
         transform: translateX(300px);
     }
 }
@@ -1700,6 +1709,8 @@ html.loadIsotope .progressLoading {
 
 html.loadIsotope section.projectsContainer {
     opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
     transform: translateY(0);
 }
 html.fixed #filter {height: 8vh;}
@@ -3086,6 +3097,20 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     main.homeWrapper section.home-slogan-container .slogan-info p {
         font-size: 0.9rem;
     }
+    main.homeWrapper section.home-slogan-container .slogan-overlay canvas#C {
+        display: none;
+    }
+    main.homeWrapper section.home-slogan-container .slogan-overlay {
+        position: fixed;
+        height: 100%;
+        opacity: .6;
+    }
+    header.homeHeader {
+        background-color: transparent;
+    }
+    main.homeWrapper section.home-slogan-container .slogan-overlay img, main.homeWrapper section.home-slogan-container .slogan-overlay video{
+        display: block;
+    }
     /*==========HOME=============*/
     /*==========ABOUT=============*/
     section.aboutContainer {
@@ -3895,6 +3920,8 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     section.projectsContainer .grid-item .projectWrap .projectMediaOverlayBoxWrap .projectOverlayWrap {
         opacity: .55;
         pointer-events: none;
+        -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
         transform: translateX(-100%);
     }
 
@@ -3907,6 +3934,8 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     }
 
     section.projectsContainer .grid-item .projectWrap:hover .projectMediaOverlayBoxWrap .projectOverlayWrap {
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
         transform: translateX(0);
     }
 
