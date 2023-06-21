@@ -280,6 +280,7 @@ input[type="number"]{
     -webkit-transform-origin: left;
     -ms-transform-origin: left;
     transform-origin: left;
+    background-color: transparent;
 }
 .half-padding-left {
     padding-left: 7vw;
@@ -467,12 +468,10 @@ html.loaded #loading {
     -webkit-box-shadow: none;
     box-shadow: none;
     text-align: right;
-    /*20px*/
     font-weight: 700;
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: flex-end; */
     position: relative;
+    color: transparent;
+
 }
 html#day .progress-bar{
     background-color: var(--white-color);
@@ -1747,7 +1746,7 @@ section.projectsContainer .grid-item:nth-of-type(odd) .projectWrap {
     opacity: 1;
 }
 section.projectsContainer .grid-item .projectWrap.hide-project-box {
-    opacity: 0;
+    opacity: .05;
 }
 main.projectsWrapper.loaded section.projectsContainer {
     opacity: 1;
@@ -2550,13 +2549,15 @@ section.singleBlogSideBarWrapper .single-blog-content img {
 .contactContainer .contact_info .title > * {
     display: block;
 }
-.contactItemsWrap {
+#map.contactItemsWrap {
     width: 100%;
+    height: 50vh;
 }
 
 .contactItemsWrap img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
 }
 .contactContainer .contact_info .title > *:last-child {
     font-weight: 700;
@@ -2571,7 +2572,6 @@ section.singleBlogSideBarWrapper .single-blog-content img {
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    padding-top: 13vh;
 }
 .contactFeature-container {
     margin-top: 60px;
@@ -2591,7 +2591,21 @@ section.singleBlogSideBarWrapper .single-blog-content img {
     -o-transition: all ease-in-out 0.35s;
     transition: all ease-in-out 0.35s;
 }
-
+.contactContainer .contact_info .contactSocialMediaBoxes {
+    margin-bottom: 20px;
+}
+.contactContainer .contact_info .contactSocialMediaBoxes p.title {
+    text-transform: uppercase;
+    margin: 0;
+}
+.contactContainer .contact_info .contactSocialMediaBoxes ul.menu-social-media-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    column-gap: 14px;
+}
 .contactFeature-item {
     margin-bottom: 20px;
 }
@@ -3055,6 +3069,9 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
         align-items: center;
         padding-bottom: 50px;
         height: calc(var(--vh, 1vh) * 100);
+    }
+    html.scroll #menu-container {
+        height: 100vh;
     }
     /*==========NAV & HEADER=============*/
     /*==========HOME=============*/
@@ -3944,9 +3961,7 @@ html#night footer .copyright-wrap a svg path, html#night  footer .copyright-wrap
     }
     /*=========PROJECTS & ARTS============*/
     /*=========CONTACT US============*/
-    .contactContainer .contact-tabs {
-        padding-top: 10vh;
-    }
+
     /*=========CONTACT US============*/
 }
 @media only screen and (min-width: 769px) and (max-width: 1030px) {
@@ -4605,16 +4620,16 @@ body.opMenu header #menu .menuBoxes svg rect:last-child body.opMenu header #menu
     -o-transition-delay: .2s;
     transition-delay: .2s;
 }
-html[data-color="orange"] .router-overlay-first{
+html#day[data-color="orange"] .router-overlay-first{
     background-color: var(--pallet-orange-color);
 }
-html[data-color="red"] .router-overlay-first{
+html#day[data-color="red"] .router-overlay-first{
     background-color: var(--pallet-red-color);
 }
-html[data-color="green"] .router-overlay-first{
+html#day[data-color="green"] .router-overlay-first{
     background-color: var(--pallet-green-color);
 }
-html[data-color="blue"] .router-overlay-first{
+html#day[data-color="blue"] .router-overlay-first{
     background-color: var(--pallet-blue-color);
 }
 html#day[data-color="orange"] .router-overlay{

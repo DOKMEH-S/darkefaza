@@ -11,8 +11,10 @@ const isDayTime = hours > 6 && hours < 20;
 if (isDayTime === false) {
     document.querySelector('html').style.backgroundColor = '#1E1E1E';
     $('html').attr('id', 'night');
+    loadPage();
 } else {
     $('html').attr('id', 'day');
+    loadPage();
 }
 /*====================DETECT TIME=====================*/
 /*====================DETECT COLOR=====================*/
@@ -59,8 +61,7 @@ if(!isMobile.any){
     smoother.effects('.parallax-img',{speed: 'auto'});
 }
 /*====================DEFINE GSAP=====================*/
-$(document).ready(function () {
-    ajaxSucses();
+function loadPage(){
     if($('html').hasClass('firstView') == true){
         setTimeout(function () {
             $('html').addClass('loaded');
@@ -79,6 +80,9 @@ $(document).ready(function () {
             },1300)
         },100)
     }
+}
+$(document).ready(function () {
+    ajaxSucses();
     let vh = window.innerHeight * 0.01;
 // Then we set the value in the --vh custom property to the root of the document
     document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -91,8 +95,10 @@ $(document).ready(function () {
         var scroll = $(window).scrollTop();
         if (scroll > 0) {
             $('header').addClass('bg-effect');
+            $('html').addClass('scroll');
         } else {
             $('header').removeClass('bg-effect');
+            $('html').removeClass('scroll');
         }
     });
     $('#menuMobile').click(function () {
